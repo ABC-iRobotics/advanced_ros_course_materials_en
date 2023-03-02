@@ -1,78 +1,80 @@
-site_name: Robotprogramozás ROS környezetben
-site_url: https://example.com/
-site_description: Robotprogramozás ROS környezetben
-site_author: Nagy Tamás
+site_name: Advanced programming of robots in ROS
+site_url: https://abc-irobotics.github.io/advanced_ros_course_materials_en/
+site_description: Advanced programming of robots in ROS
+site_author: Tamas D. Nagy
 
 nav:
-    - Kezdőlap: index.md
-    - Tananyagok: 
-        - 1. Bevezetés: 01_intro.md
-        - 2. Linux, ROS alapismeretek: 02_linux_ros_principles.md
-        - 3. Python alapismeretek,  ROS Publisher, ROS Subscriber: 03_python_principles.md
-        - 4. Verziókövetés, Git: 04_git.md
-        - 5. Robotikai alapismeretek, Sebészrobot programozása: 05_da_vinci.md
-        - 6. Roslaunch, saját üzenetek, action, service: 06_roslaunch.md
-        - 7. Kinematika, inverz kinematika: 07_robotics_principles.md
-    - Kötelező program: projects.md
-    
+  - Kezdőlap: index.md
+  - Tananyagok:
+      - 1. Bevezetés, Fejlesztőkörnyezet: 01_system_setup.md
+      - 2. Linux, ROS alapismeretek: 02_linux_ros_principles.md
+      - 3. Python alapismeretek,  ROS Publisher, ROS Subscriber: 03_python_principles.md
+      - 4. Verziókövetés, Git: 04_git.md
+      - 5. Robotikai alapismeretek, Sebészrobot programozása: 05_da_vinci.md
+      - 6. Roslaunch, saját üzenetek, action, service: 06_roslaunch.md
+      - 7. Kinematika, inverz kinematika: 07_robotics_principles.md
+  - Kötelező program: projects.md
+
 
 theme:
-    name: material
-    palette:
+  name: material
+  palette:
     # Palette toggle for light mode
-      - media: "(prefers-color-scheme: light)"
-        scheme: default
-        toggle:
-          icon: material/lightbulb
-          name: Switch to dark mode
+    - media: "(prefers-color-scheme: light)"
+      primary: black
+      accent: orange
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
 
     # Palette toggle for dark mode
-      - media: "(prefers-color-scheme: dark)"
-        scheme: slate
-        toggle:
-          icon: material/lightbulb-outline
-          name: Switch to light mode
-    language: hu
-    features:
-        - navigation.tabs
-        - toc.integrate
-        
-        
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: orange
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+  language: hu
+  features:
+    - navigation.tabs
+    - toc.integrate
 
-extra:                                              
-  alternate:  
+
+
+extra:
+  alternate:
     - name: English
-      link: https://abc-irobotics.github.io/ros_course_materials_en/
+      link: https://abc-irobotics.github.io/advanced_ros_course_materials_en/
       lang: en
 
     - name: Hungarian
-      link: https://abc-irobotics.github.io/ros_course_materials_hu/
+      link: https://abc-irobotics.github.io/advanced_ros_course_materials_hu/
       lang: hu
-   
-plugins:
-    - search
-    - pdf-export
-       
-      
-markdown_extensions:
-    - pymdownx.arithmatex:
-        generic: true 
-    - mkdocs_graphviz
-    - admonition
-    - pymdownx.details
-    - pymdownx.superfences
-    - attr_list
-    - md_in_html
-    - tables
 
-    
-copyright: Copyright &copy; 2022 <a href="mailto:tamas.daniel.nagy@irob.uni-obuda.hu">Tamas D. Nagy</a>.
+plugins:
+  - search
+  - pdf-export
+
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - mkdocs_graphviz
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - tables
+
+
+copyright: Copyright &copy; 2023 <a href="mailto:tamas.daniel.nagy@irob.uni-obuda.hu">Tamas D. Nagy</a>.
 
 
 extra_javascript:
-    - javascripts/mathjax.js
-    - https://polyfill.io/v3/polyfill.min.js?features=es6
-    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    - https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js
-    
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js
 
