@@ -9,17 +9,17 @@
         <meta name="description" content="Advanced programming of robots in ROS">
       
       
-        <meta name="author" content="Tamas D. Nagy">
+        <meta name="author" content="Nagy Tamás">
       
       
-        <link rel="canonical" href="https://abc-irobotics.github.io/advanced_ros_course_materials_en/projects/">
+        <link rel="canonical" href="https://abc-irobotics.github.io/advanced_ros_course_materials_en/01_system_setup/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
     
     
       
-        <title>Követelmények - Advanced programming of robots in ROS</title>
+        <title>Bevezetés - Advanced programming of robots in ROS</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kotelezo-program" class="md-skip">
+        <a href="#01-bevezetes" class="md-skip">
           Kihagyás
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Követelmények
+              Bevezetés
             
           </span>
         </div>
@@ -223,13 +223,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../01_system_setup/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Tananyagok
       </a>
     </li>
@@ -239,12 +241,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
+    <a href="../projects/" class="md-tabs__link">
       Kötelező program
     </a>
   </li>
@@ -305,12 +305,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -331,11 +333,127 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../01_system_setup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1. Bevezetés, Fejlesztőkörnyezet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1. Bevezetés, Fejlesztőkörnyezet
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#robot-operating-system-ros-bevezetes" class="md-nav__link">
+    Robot Operating System (ROS) bevezetés
+  </a>
+  
+    <nav class="md-nav" aria-label="Robot Operating System (ROS) bevezetés">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-robot-fogalma" class="md-nav__link">
+    A robot fogalma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mi-a-ros" class="md-nav__link">
+    Mi a ROS?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tortenet" class="md-nav__link">
+    Történet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fejlesztokornyezet-felallitasa-hazi-feladat" class="md-nav__link">
+    Fejlesztőkörnyezet felállítása - Házi feladat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-1-noetic" class="md-nav__link">
+    ROS 1 Noetic
+  </a>
+  
+    <nav class="md-nav" aria-label="ROS 1 Noetic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ros-2-foxy" class="md-nav__link">
+    ROS 2 Foxy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tovabbi-csomagok" class="md-nav__link">
+    További csomagok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    IDE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasznos-linkek" class="md-nav__link">
+    Hasznos linkek
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -437,168 +555,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Kötelező program
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
         Kötelező program
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tartalomjegyzék
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nehezsegi-fokozatok-es-erdemjegyek" class="md-nav__link">
-    Nehézségi fokozatok és érdemjegyek
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#utemezes" class="md-nav__link">
-    Ütemezés
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evkozi-jegy" class="md-nav__link">
-    Évközi jegy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kotelezo-program-temak" class="md-nav__link">
-    Kötelező program témák
-  </a>
-  
-    <nav class="md-nav" aria-label="Kötelező program témák">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-platypous" class="md-nav__link">
-    1. PlatypOUs
-  </a>
-  
-    <nav class="md-nav" aria-label="1. PlatypOUs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-platypous-palyakovetes" class="md-nav__link">
-    1.1. PlatypOUs pályakövetés
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-platypous-akadaly-elkerules" class="md-nav__link">
-    1.2. PlatypOUs akadály elkerülés
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-platypous-objektum-kovetes" class="md-nav__link">
-    1.3. PlatypOUs objektum követés
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-platypous-action-library" class="md-nav__link">
-    1.4. PlatypOUs action library
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-ambf" class="md-nav__link">
-    2. AMBF
-  </a>
-  
-    <nav class="md-nav" aria-label="2. AMBF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-da-vinci-sebeszrobot-ros-integracioja-ambf-szimulatorban" class="md-nav__link">
-    2.1. da Vinci sebészrobot ROS integrációja AMBF szimulátorban
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-kuka-robotkar-ros-integracioja-ambf-szimulatorban" class="md-nav__link">
-    2.2. KUKA robotkar ROS integrációja AMBF szimulátorban
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-pr2-humanoid-robot-ros-integracioja-ambf-szimulatorban" class="md-nav__link">
-    2.3. PR2 humanoid robot ROS integrációja AMBF szimulátorban
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#x-sajat-tema" class="md-nav__link">
-    X. Saját téma
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hasznos-linkek" class="md-nav__link">
-    Hasznos linkek
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -612,163 +573,186 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="projects.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="01_system_setup.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
               
                 
 
 
-<h1 id="kotelezo-program">Kötelező Program</h1>
+<h1 id="01-bevezetes">01. Bevezetés</h1>
 <hr />
-<h2 id="nehezsegi-fokozatok-es-erdemjegyek">Nehézségi fokozatok és érdemjegyek</h2>
+<h2 id="robot-operating-system-ros-bevezetes">Robot Operating System (ROS) bevezetés</h2>
 <hr />
-<p>A kötelező programok három <em>nehézségi fokozatban</em> teljesíthetők. A <em>nehézségi fok</em> meghatározza a <strong>legjobb</strong> érdemjegyet, amely a teljesítéséért kapható! </p>
-<table>
-<thead>
-<tr>
-<th>Nehézségi fok</th>
-<th align="center">Legjobb megszerezhető érdemjegy</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Basic</td>
-<td align="center">3</td>
-</tr>
-<tr>
-<td>Advanced</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td>Epic</td>
-<td align="center">5</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A feladatok úgy vannak megadva, hogy érdemes a <strong>Basic</strong> szinttel kezdeni, és onnan fokozatosan építkezni az <strong>Epic</strong> szintig.</p>
-</div>
-<p>A kötelező programok a következő szempontok szerint kerülnek értékelésre: </p>
+<h3 id="a-robot-fogalma">A robot fogalma</h3>
+<p><img align="right" alt="" src="../img/what_is_a_robot_1.png" style="width:300px" /></p>
 <ul>
-<li>Bizonyítottan saját munka</li>
-<li>Értékelhető eredményeket produkáljon</li>
-<li>Verziókövetés használata, feltöltés GitHub/GitLab/egyéb repoba</li>
-<li>Értékelési szempontok:<ul>
-<li>a megoldás teljessége</li>
-<li>megfelelő ROS kommunikáció alkalmazása</li>
-<li>program célszerű szerkezete</li>
-<li>az implementáció minősége</li>
-<li>a kód dokumentálása</li>
+<li><strong>Joseph Engelberger, pioneer in industrial robotics:</strong> <em>"I can't define a robot, but I know one when I see one."</em></li>
+<li><strong>Wikipedia:</strong> <em>"A robot is a machine—especially one programmable by a computer— capable of carrying out a complex series of actions automatically. Robots can be guided by an external control device or the control may be embedded within. Robots may be constructed on the lines of human form, but most robots are machines designed to perform a task with no regard to their aesthetics."</em></li>
+<li><strong>ISO 8373:2012 Robots and robotic devices – Vocabulary, FDIS 2012:</strong> <em>"A robot is an actuated mechanism programmable in two or more axes with a degree of autonomy, moving within its environment, to perform intended tasks."</em></li>
+<li><strong>Rodney Brooks, Founder and CTO, Rethink Robotics:</strong> <em>"A robot is some sort of device, wich has sensors those sensors the world, does some sort of computation, decides on an action, and then does that action based on the sensory input, which makes some change out in the world, outside its body. Comment: the part "make some change outside its body" discriminates a washing machine from e.g. a Roomba."</em></li>
+<li><strong>Tamás Haidegger, Encyclopedia of Robotics</strong>: <em>"A robot is a complex mechatronic system enabled with electronics, sensors, actuators and software, executing tasks with a certain degree of autonomy. It may be pre-programmed, teleoperated or carrying out computations to make decisions."</em></li>
 </ul>
+<hr />
+<h3 id="mi-a-ros">Mi a ROS?</h3>
+<p><img align="right" alt="" src="https://moveit.ros.org/assets/images/logo/ROS_logo.png" style="width:300px" /></p>
+<ul>
+<li>Open-source, robotikai célú middleware</li>
+<li>Modularitás, újra-felhasználhatóság (driverek, algoritmusok, library-k, ...)</li>
+<li>Hardware absztrakció, ROS API</li>
+<li>C++ és Python támogatás</li>
+<li>Ubuntu Linux (kivéve ROS 2)</li>
+<li>Népes közösség</li>
+</ul>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/639236696?h=740f412ce5" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+
+<hr />
+<h3 id="tortenet">Történet</h3>
+<p><img align="right" alt="" src="https://www.freshconsulting.com/wp-content/uploads/2022/06/path-planning-1024x693.jpg" style="width:300px" /></p>
+<ul>
+<li>2000-es évek közepe, Stanford: robotikai célú rugalmas, dinamikus szoftverrendszer prototípusok fejlesztése</li>
+<li>2007, Willow Garage: inkubáció, kialakult a ROS alapja BSD open-source licensz alatt</li>
+<li>Robotikai kutatások területén egyre inkább elterjedt, PR2</li>
+<li>2012: Ipari robotika, ROS-Industrial</li>
+<li>2017: ROS 2</li>
+</ul>
+<hr />
+<h2 id="fejlesztokornyezet-felallitasa-hazi-feladat">Fejlesztőkörnyezet felállítása - Házi feladat</h2>
+<hr />
+<p><img align="right" alt="" src="https://brandslogos.com/wp-content/uploads/thumbs/ubuntu-logo-vector.svg" style="width:400px" /></p>
+<p>Ajánlott környezet:</p>
+<ul>
+<li>Ubuntu 20.04</li>
+<li>ROS1 Noetic</li>
+<li>ROS2 Foxy</li>
+<li><em>IDE: QtCreator/CLion/VSCode</em></li>
+</ul>
+<hr />
+<h2 id="ros-1-noetic">ROS 1 Noetic</h2>
+<p><img align="right" alt="" src="http://wiki.ros.org/noetic?action=AttachFile&amp;do=get&amp;target=noetic.png" style="width:300px" /></p>
+<ol>
+<li>
+<p>ROS Noetic telepítése</p>
+<div class="highlight"><pre><span></span><code>sudo sh -c <span class="s1">&#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</span>
+sudo apt install curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc <span class="p">|</span> sudo apt-key add -
+sudo apt update
+sudo apt install ros-noetic-desktop-full
+<span class="nb">source</span> /opt/ros/noetic/setup.bash
+</code></pre></div>
+<hr />
 </li>
-</ul>
+<li>
+<p>ROS 1 dependencies</p>
+<div class="highlight"><pre><span></span><code>sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+sudo rosdep init
+rosdep update
+</code></pre></div>
 <hr />
-<h2 id="utemezes">Ütemezés</h2>
+</li>
+<li>
+<p>Ha ezzel megvagyunk, a következő parancssal tesztelhetjük a ROS 1 telepítésünket:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> /opt/ros/noetic/setup.bash
+roscore
+</code></pre></div>
+</li>
+</ol>
 <hr />
-<table>
-<thead>
-<tr>
-<th align="center">Okt. hét</th>
-<th>Dátum</th>
-<th>Számonkérés</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">2.</td>
-<td>szept. 13</td>
-<td>Kötelező programok ismertetése.</td>
-</tr>
-<tr>
-<td align="center">8.</td>
-<td>okt. 25</td>
-<td>Kötelező program mérföldkő.</td>
-</tr>
-<tr>
-<td align="center">14.</td>
-<td>nov. 6</td>
-<td>Kötelező programok bemutatása.</td>
-</tr>
-</tbody>
-</table>
+<h3 id="ros-2-foxy">ROS 2 Foxy</h3>
+<p><img align="right" alt="" src="https://global.discourse-cdn.com/business7/uploads/ros/optimized/2X/d/d6fd5322bd2ddc06530d8352fcab20f0bca08c06_2_861x1024.png" style="width:300px" /></p>
+<ol>
+<li>
+<p>Locale beállítása.</p>
+<div class="highlight"><pre><span></span><code>locale  <span class="c1"># check for UTF-8</span>
+
+sudo apt update <span class="o">&amp;&amp;</span> sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+
+locale  <span class="c1"># verify settings</span>
+</code></pre></div>
 <hr />
-<h2 id="evkozi-jegy">Évközi jegy</h2>
+</li>
+<li>
+<p>ROS 2 Foxy telepítése</p>
+<div class="highlight"><pre><span></span><code>sudo apt install software-properties-common
+sudo add-apt-repository universe
+sudo apt update <span class="o">&amp;&amp;</span> sudo apt install curl
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+<span class="nb">echo</span> <span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2"> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu </span><span class="k">$(</span>. /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$UBUNTU_CODENAME</span><span class="k">)</span><span class="s2"> main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ros2.list &gt; /dev/null
+sudo apt update
+sudo apt upgrade
+sudo apt install ros-foxy-desktop python3-argcomplete ros-dev-tools ros-foxy-moveit* ros-foxy-control*
+</code></pre></div>
 <hr />
-<p>A félév elfogadásának feltétele, hogy mind a két ZH, mind a kötelező program értékelése legalább elégséges. A két ZH közül az egyik az utolsó óra alkalmával pótolható.</p>
-<div class="admonition abstract">
-<p class="admonition-title">Félév végi jegy</p>
-<p><span class="arithmatex">\(Jegy = (ZH1 + ZH2 + 2 \times KötProg) / 4\)</span> </p>
+</li>
+<li>
+<p>Ha ezzel megvagyunk, a következő parancssal tesztelhetjük a ROS 2 telepítésünket:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> /opt/ros/foxy/setup.bash
+ros2 run demo_nodes_py talker
+</code></pre></div>
+<hr />
+</li>
+<li>
+<p>A <code>source</code> parancs a környezeti változók beállításáért felelős, ezt minden új terminálablak megnyitásakor meg kell(ene) adni. Ez a parancs beilleszthető a <code>~/.bashrc</code> fájl végére, amely minden terminálablak megnyitásakor lefut, így nem kell mindig beírnunk (ROS 2 lesz az alapértelmezett):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;source /opt/ros/foxy/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h3 id="tovabbi-csomagok">További csomagok</h3>
+<ol>
+<li>
+<p>Az alábbi csomagokra is szükség lesz a félév során, így ezeket is érdemes feltelepíteni:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev python3-catkin-tools python3-osrf-pycommon libasound2-dev libgl1-mesa-dev xorg-dev ros-foxy-turtlebot3*
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h3 id="ide">IDE</h3>
+<ol>
+<li>
+<p>QtCreator</p>
+<p>ROS csomagok fejlesztéséhez jelenleg az egyik leginkább használható IDE a QtCreator, melyhez ROS plugin is készült. Az installer az alábbi linken elérhető. A "18.04 <strong>offline</strong> installer"-t érdemes használni, ez működik Ubunutu 20.04-en is.</p>
+<p><a href="https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html">https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html</a></p>
+<p>Ha letöltöttük, az IDE az alábbi paranccsal telepíthető (fontos, hogy <code>cd</code>zzünk be a letöltés helyére):</p>
+<div class="highlight"><pre><span></span><code>chmod +x qtcreator-ros-bionic-latest-offline-installer.run
+sudo ./qtcreator-ros-bionic-latest-offline-installer.run
+</code></pre></div>
+<p>Amikor a telepítő kérdezi, hova telepítse, módosítsuk pl. <code>/home/&lt;USER&gt;/QtCreator</code> mappára. Ha a root-ba teléepítjük, nem fogjuk tudni futtatni. A telepítés után "Qt Creator (4.9.2)" néven keressük.</p>
+<hr />
+</li>
+<li>
+<p>CLion</p>
+<p>A CLion magasfokú ROS integrációval rendelkezik, a kurzus során ennek a használata a leginkább ajánlott. Ingyenes hallgatói licensz az alábbi linken igényelhető: <a href="https://www.jetbrains.com/community/education/#students">https://www.jetbrains.com/community/education/#students</a></p>
+<p>Telepítés után keressük meg a <code>/var/lib/snapd/desktop/applications/clion-clion.desktop</code> fájlt. A megfelelő sort írjuk át erre, így a terminál által beállított környezetet fogja használni az IDE:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>bash -i -c <span class="s2">&quot;/snap/bin/clion&quot;</span> %f
+</code></pre></div>
+<hr />
+</li>
+<li>
+<p>Visual Studio</p>
+<p>A Microsoft Visual Studio szintén támogatja a ROS-hoz készült forráskódokat, ez az IDE is használható a félév során.</p>
+</li>
+</ol>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Suggestion</p>
+<p>Install <strong>Terminator</strong> terminal emulator:
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install terminator
+</code></pre></div></p>
 </div>
-<hr />
-<h2 id="kotelezo-program-temak">Kötelező program témák</h2>
-<hr />
-<h3 id="1-platypous">1. PlatypOUs</h3>
-<hr />
-<p><img alt="" src="https://i.imgur.com/mCuxG54.png" /></p>
-<h4 id="11-platypous-palyakovetes">1.1. PlatypOUs pályakövetés</h4>
-<ul>
-<li><strong>Basic:</strong> Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.</li>
-<li><strong>Advanced:</strong> ROS rendszer implementálása pályakövetésre szimulált környezetben bármely szenzor felhasználásával(pl. fal mellett haladás adott távolságra LIDAR segítségével).</li>
-<li><strong>Epic:</strong> Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!</li>
-</ul>
-<h4 id="12-platypous-akadaly-elkerules">1.2. PlatypOUs akadály elkerülés</h4>
-<ul>
-<li><strong>Basic:</strong> Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.</li>
-<li><strong>Advanced:</strong> ROS rendszer implementálása akadály felismerésére és az akadályt kikerülő trajektória tervezésére és megvalósítására szimulált környezetben bármely szenzor felhasználásával.</li>
-<li><strong>Epic:</strong> Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!</li>
-</ul>
-<h4 id="13-platypous-objektum-kovetes">1.3. PlatypOUs objektum követés</h4>
-<ul>
-<li><strong>Basic:</strong> Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.</li>
-<li><strong>Advanced:</strong> ROS rendszer implementálása objektum megkeresésére/felismerésére és követésére/megközelítésére szimulált környezetben bármely szenzor felhasználásával (pl. visual servoing).</li>
-<li><strong>Epic:</strong> Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!</li>
-</ul>
-<h4 id="14-platypous-action-library">1.4. PlatypOUs action library</h4>
-<ul>
-<li><strong>Basic:</strong> Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.</li>
-<li><strong>Advanced:</strong> Egyszerű műveleteket tartalmazó, ROS action alapú könyvtár és ezeket végrehajtó rendszer implementálása (pl. push object, move to object, turn around).</li>
-<li><strong>Epic:</strong> Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!</li>
-</ul>
-<hr />
-<h3 id="2-ambf">2. AMBF</h3>
-<hr />
-<h4 id="21-da-vinci-sebeszrobot-ros-integracioja-ambf-szimulatorban">2.1. da Vinci sebészrobot ROS integrációja AMBF szimulátorban</h4>
-<p><img alt="" src="https://i.imgur.com/tmhAkwg.png" /></p>
-<ul>
-<li><strong>Basic:</strong> Szimulátor élesztése, robot vezérlése joint space-ben és task space-ben (IK már implementálva AMBF-ben) ROS-ból CRTK szerinti topic-okon keresztül</li>
-<li><strong>Advanced:</strong> Objektumok detektálása <em>Peg transfer puzzle</em>-ben</li>
-<li><strong>Epic:</strong> Autonóm manipuláció <em>Peg transfer</em>-en és/vagy nyűgözz le!</li>
-</ul>
-<h4 id="22-kuka-robotkar-ros-integracioja-ambf-szimulatorban">2.2. KUKA robotkar ROS integrációja AMBF szimulátorban</h4>
-<p><img alt="" src="https://i.imgur.com/4FyvHM5.png" /></p>
-<ul>
-<li><strong>Basic:</strong> Szimulátor élesztése, robot vezérlése joint space-ben ROS-ból</li>
-<li><strong>Advanced:</strong> Robot vezérlése task space-ben, IK?</li>
-<li><strong>Epic:</strong> Trajektóriatervezés</li>
-</ul>
-<h4 id="23-pr2-humanoid-robot-ros-integracioja-ambf-szimulatorban">2.3. PR2 humanoid robot ROS integrációja AMBF szimulátorban</h4>
-<p><img alt="" src="https://i.imgur.com/tGCClwQ.png" /></p>
-<ul>
-<li><strong>Basic:</strong> Szimulátor élesztése, robot vezérlése joint space-ben ROS-ból</li>
-<li><strong>Advanced:</strong> Robot vezérlése task space-ben, IK?</li>
-<li><strong>Epic:</strong> Trajektóriatervezés/Navigáció/Manipuláció</li>
-</ul>
-<hr />
-<h3 id="x-sajat-tema">X. Saját téma</h3>
-<hr />
-<p>Megegyezés alapján.</p>
 <hr />
 <h2 id="hasznos-linkek">Hasznos linkek</h2>
 <ul>
-<li><a href="http://wiki.ros.org/gazebo_ros_pkgs">Gazebo ROS packages</a></li>
-<li><a href="https://github.com/ABC-iRobotics/PlatypOUs-Mobile-Robot-Platform">PlatypOUs</a></li>
-<li><a href="https://github.com/WPI-AIM/ambf">AMBF</a></li>
-<li><a href="https://github.com/TamasDNagy/ambf">My fork of AMBF</a></li>
-<li><a href="https://github.com/jhu-cisst/cisst/blob/devel/utils/crtk-port/crtk-ros-commands.dict">CRTK topics</a></li>
-<li><a href="http://wiki.ros.org/navigation">Navigation stack</a></li>
-<li><a href="https://www.hindawi.com/journals/jat/2020/8867937/">Paper on LiDAR SLAM</a></li>
-<li><a href="https://ipsjcva.springeropen.com/articles/10.1186/s41074-017-0027-2">Paper on vSLAM</a></li>
-<li><a href="https://www.researchgate.net/publication/252057005_An_image_based_visual_servoing_scheme_for_wheeled_mobile_robots">Paper on Visual Servoing Mobile Robot</a></li>
+<li><a href="https://www.ros.org/">https://www.ros.org/</a></li>
+<li><a href="http://wiki.ros.org/noetic/Installation/Ubuntu">ROS 1 Noetic installation</a></li>
+<li><a href="https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html">ROS 2 Foxy installation</a></li>
+<li><a href="http://wiki.ros.org/Distributions">ROS Distributions</a></li>
+<li><a href="http://wiki.ros.org/ROS/Tutorials">http://wiki.ros.org/ROS/Tutorials</a></li>
+<li><a href="https://www.jetbrains.com/community/education/#students">CLion hallgatói licensz</a></li>
+<li><a href="https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html">QtCreator + ROS plugin</a></li>
+<li><a href="https://www.youtube.com/watch?v=8XmKGWBV5Nw">IROB virtual tour</a></li>
 </ul>
 
 
@@ -788,7 +772,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Élőláb" >
       
         
-        <a href="../07_robotics_principles/" class="md-footer__link md-footer__link--prev" aria-label="Előző: 7. Kinematika, inverz kinematika" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Előző: Kezdőlap" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -797,11 +781,26 @@
               <span class="md-footer__direction">
                 Előző
               </span>
-              7. Kinematika, inverz kinematika
+              Kezdőlap
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../02_linux_ros_principles/" class="md-footer__link md-footer__link--next" aria-label="Következő: 2. Linux, ROS alapismeretek" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Következő
+              </span>
+              2. Linux, ROS alapismeretek
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
