@@ -1,7 +1,8 @@
 site_name: Advanced programming of robots in ROS
 site_url: https://abc-irobotics.github.io/advanced_ros_course_materials_en/
-site_description: Advanced programming of robots in ROS
+site_description: Materials for the course Advanced programming of robots in ROS at Óbuda University
 site_author: Tamas D. Nagy
+repo_url: https://github.com/ABC-iRobotics/advanced_ros_course_materials_en
 
 nav:
   - Kezdőlap: index.md

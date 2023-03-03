@@ -1,234 +1,112 @@
----
-title: Bevezetés
-author: Nagy Tamás
----
-
-# 01. Bevezetés
+## Kurzussal kapcsolatos információk
 
 ---
-
-## Robot Operating System (ROS) bevezetés
+### Tárgyfelelős
+Dr. Galambos Péter    
+[peter.galambos@irob.uni-obuda.hu](mailto:peter.galambos@irob.uni-obuda.hu)
 
 ---
 
-### A robot fogalma
+### Oktatók
+Nagy Tamás    
+[tamas.daniel.nagy@irob.uni-obuda.hu](mailto:tamas.daniel.nagy@irob.uni-obuda.hu)
 
-- **Joseph Engelberger, pioneer in industrial robotics:** *"I can't define a robot, but I know one when I see one."*
-- **Wikipedia:** *"A robot is a machine—especially one programmable by a computer— capable of carrying out a complex series of actions automatically. Robots can be guided by an external control device or the control may be embedded within. Robots may be constructed on the lines of human form, but most robots are machines designed to perform a task with no regard to their aesthetics."*
-- **ISO 8373:2012 Robots and robotic devices – Vocabulary, FDIS 2012:** *"A robot is an actuated mechanism programmable in two or more axes with a degree of autonomy, moving within its environment, to perform intended tasks."*
-- **Rodney Brooks, Founder and CTO, Rethink Robotics:** *"A robot is some sort of device, wich has sensors those sensors the world, does some sort of computation, decides on an action, and then does that action based on the sensory input, which makes some change out in the world, outside its body. Comment: the part "make some change outside its body" discriminates a washing machine from e.g. a Roomba."*
-- **Tamás Haidegger, Encyclopedia of Robotics**: *"A robot is a complex mechatronic system enabled with electronics, sensors, actuators and software, executing tasks with a certain degree of autonomy. It may be pre-programmed, teleoperated or carrying out computations to make decisions."*
-
----
-
-### Mi a ROS?
-
-![](https://moveit.ros.org/assets/images/logo/ROS_logo.png){:style="width:300px" align=right}
-
-- Open-source, robotikai célú middleware
-- Modularitás, újra-felhasználhatóság (driverek, algoritmusok, library-k, ...)
-- Hardware absztrakció, ROS API
-- C++ és Python támogatás
-- Ubuntu Linux (kivéve ROS 2)
-- Népes közösség
-
-![](https://upload.wikimedia.org/wikipedia/commons/4/43/Ros_Equation.png)
+Détár Borsa    
+[detar.borsa@gmail.com](mailto:detar.borsa@gmail.com)
 
 ---
 
-### Történet
-
-- 2000-es évek közepe, Stanford: robotikai célú rugalmas, dinamikus szoftverrendszer prototípusok fejlesztése
-- 2007, Willow Garage: inkubáció, kialakult a ROS alapja BSD open-source licensz alatt
-- Robotikai kutatások területén egyre inkább elterjedt, PR2
-- 2012: Ipari robotika, ROS-Industrial
-- 2017: ROS 2
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mDwZ21Zia8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
-
-## Fejlesztőkörnyezet felállítása - Házi feladat
-
----
-
-Ajánlott környezet:
-    
-- Ubuntu 20.04
-- ROS1 Noetic
-- ROS2 Foxy
-- *IDE: QtCreator/CLion/VSCode*
-
----
-
-1. ROS1
-
-    ROS Noetic
-
-    ```bash
-    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-    sudo apt install curl
-    curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-    sudo apt update
-    sudo apt install ros-noetic-desktop-full
-    source /opt/ros/noetic/setup.bash
-    ```
-    
-    ROS1 dependencies
-    
-    ```bash
-    sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-    sudo rosdep init
-    rosdep update
-    ```
-
-    Ha ezzel megvagyunk, a következő parancssal tesztelhetjük a ROS telepítésünket:
+## Órarendi információk
 
 
-    ```bash
-    roscore
-    ```
-
-    ---
-
-2. ROS2 Foxy
-
-    Set locale.
-
-
-    ```bash
-    locale  # check for UTF-8
-
-    sudo apt update && sudo apt install locales
-    sudo locale-gen en_US en_US.UTF-8
-    sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-    export LANG=en_US.UTF-8
-
-    locale  # verify settings
-    ```
-
-    ROS Foxy
-
-
-    ```bash
-    sudo apt install software-properties-common
-    sudo add-apt-repository universe
-    sudo apt update && sudo apt install curl
-    sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-    sudo apt update
-    sudo apt upgrade
-    sudo apt install ros-foxy-desktop python3-argcomplete ros-dev-tools ros-foxy-moveit* ros-foxy-control*
-    ```
-    
-    Ha ezzel megvagyunk, a következő parancssal tesztelhetjük a ROS telepítésünket:
-
-
-    ```bash
-    source /opt/ros/foxy/setup.bash
-    ros2 run demo_nodes_py talker
-    ```
-
-    ---
-    
-    A `source` parancs a környezeti változók beállításáért felelős, ezt minden új terminálablak megnyitásakor meg kell(ene) adni. Ez a parancs beilleszthető a `~/.bashrc` fájl végére, amely minden terminálablak megnyitásakor lefut, így nem kell mindig beírnunk (ROS2 lesz az alapértelmezett):
-
-
-    ```bash
-    echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
-    ```
-    
-    ---
-
-3. További csomagok
-
-
-    Az alábbi csomagokra is szükség lesz a félév során, így ezeket is érdemes feltelepíteni:
-
-
-    ```bash
-    sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev python3-catkin-tools python3-osrf-pycommon libasound2-dev libgl1-mesa-dev xorg-dev ros-foxy-turtlebot3*
-    ```
-
-    ---
-
-
-4. IDE
-
-4.1. QtCreator
-
-    ROS csomagok fejlesztéséhez jelenleg a leginkább használható IDE a QtCreator, melyhez ROS plugin is készült. Az installer az alábbi linken elérhető. A "18.04 **offline** installer"-t érdemes használni, ez működik Ubunutu 20.04-en is.
-
-    [https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html)
-
-    Ha letöltöttük, az IDE az alábbi paranccsal telepíthető (fontos, hogy `cd`zzünk be a letöltés helyére):
-
-
-    ```bash
-    chmod +x qtcreator-ros-bionic-latest-offline-installer.run
-    sudo ./qtcreator-ros-bionic-latest-offline-installer.run
-    ```
-
-    Amikor a telepítő kérdezi, hova telepítse, módosítsuk pl. `/home/<USER>/QtCreator` mappára. Ha a root-ba teléepítjük, nem fogjuk tudni futtatni. A telepítés után "Qt Creator (4.9.2)" néven keressük.
-    
-4.2. CLion
-
-Keressük meg a `/var/lib/snapd/desktop/applications/clion-clion.desktop` fájlt. A megfelelő sort írjuk át erre:
-
-    ```bash
-    Exec=bash -i -c "/snap/bin/clion" %f
-    ```
-    
-Állítsuk be a Python iterpretert Python 3.8-ra, `/usr/bin/python3`. Adjuk hozzá akövetkező elérési utat: `/opt/ros/foxy/lib/python3.8/site-packages`. Hozzuk létre a `compile_commands.json` fájlt a `~/ros2_ws/build` könyvtárban az alábbi tartalommal: 
-
-    ```bash
-    [
-    ]
-    ```
-    
-TODO: move to workspace creation.
-    
----
-
-!!! tip "Suggestion"
-    Install **Terminator** terminal emulator:
-    ```bash
-    sudo apt update
-    sudo apt install terminator
-    ```
+|           Csoport            | Időpont                | Terem   | 
+|:----------------------------:|------------------------|---------|
+| **1. csoport** _ea. és lab._ | **Péntek 10:45-13:45** | BA.1.10 |                                                                                                                                                                                   
+| **2. csoport** _ea. és lab._ | **Péntek 14:00-17:00** | BA.1.10 |
 
 
 ---
 
-## Hasznos linkek
-
-- [https://www.ros.org/](https://www.ros.org/)
-- [https://www.ros.org/install/](https://www.ros.org/install/)
-- [https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html](https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html)
-- [http://wiki.ros.org/ROS/Tutorials](http://wiki.ros.org/ROS/Tutorials)
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- [Online MD editor: HackMD](https://hackmd.io/)
-- [QtCreator + ROS plugin](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html)
-- [IROB virtual tour](https://www.youtube.com/watch?v=8XmKGWBV5Nw)
-- [ROS 10 years montage](https://www.youtube.com/watch?v=mDwZ21Zia8s)
+## Féléves ütemezés
 
 
+| Okt. hét | Dátum    | Témakör                                                                                                                                                                                                       | Számonkérés                    |
+|:--------:|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
+|    1.    | márc. 3  | [Követelmények ismertetése. ROS bevezetés. Fejlesztőkörnyezet felállítása.](01_system_setup.md)                                                                                                               | -                              |
+|    2.    | márc. 10 | [Fejlesztőkörnyezet felállítása. Linux alapok. ROS 1 és ROS 2. Egyszerű próbakódok futtatása. ROS package. Az alapvető ROS kommunikáció, publisher és subscriber implementálása.](02_linux_ros_principles.md) | -                              |
+|    3.    | márc. 17 | [Python alapok. ROS kommunikáció implementációjának gyakorlása, példafeladatok megoldása.](03_python_principles.md)                                                                                           | -                              |
+|    4.    | márc. 24 | [Robotikai alapfogalmak, da Vinci sebészrobot programozása szimulált környezetben I.](05_da_vinci.md)                                                                                                         | -                              |
+|    5.    | márc. 31 | [Verziókövetés, Git.](04_git.md) Projekt labor I.                                                                                                                                                             | -                              |
+|    7.    | ápr. 14  | [Roslaunch, ROS paraméter szerver. Rosbag.](06_roslaunch.md)                                                                                                                                                  | -                              |
+|    8.    | ápr. 21  | Saját üzenetek definiálása. ROS service, ROS action fogalma, felhasználása.                                                                                                                                   | **ZH1**                        |
+|    9.    | ápr. 28  | [Kinematika, inverz kinematika, szimulált robotkar programozása csukló-, és munkatérben I.](07_robotics_principles.md)                                                                                        | -                              |
+|   10.    | máj. 5   | URDF, webes felületek illesztése: RosBridge és RoslibJS.                                                                                                                                                      | -                              |
+|   11.    | máj. 12  | Kálmán-szűrő. Szenzoros adatok gyűjtése és feldolgozása ROS környezetben.                                                                                                                                     | -                              |
+|   12.    | máj. 19  | Szenzorfúzió Kálmán-szűrővel.  Odometria-IMU szenzorfúzió implementációja mobil robot platformra.                                                                                                             | -                              |
+|   13.    | máj. 26  | Projekt labor II.                                                                                                                                                                                             | **ZH2**                        |
+|   14.    | jún. 2   | Kötelező programok bemutatása.                                                                                                                                                                                | **Pót ZH**                     |
+|  14+1.   | jún. 9   | -                                                                                                                                                                                                             | Aláíráspótló: **csak kötprog** |
 
 
+!!! warning
+A félév során az ütemezés változhat!
+
+---
 
 
+## Követelmények
+
+---
+
+### Kötelező program
+
+- Bizonyítottan saját munka
+- Értékelhető eredményeket produkáljon
+- Pontozás: a megoldás teljessége, megfelelő ROS kommunikáció alkalmazása, program célszerű szerkezete, az implementáció minősége, a kód dokumentálása
+
+---
+
+### Évközi jegy
+
+A jelenlét az órákon kötelező (min 70%).
+
+A félév elfogadásának feltétele, hogy mind a két ZH, mind a kötelező program értékelése legalább elégséges. A **két ZH közül** az **egyik** az aláíráspótló vizsga alkalmával **pótolható**.
+
+!!! abstract "Félév végi jegy"
+$Jegy = (ZH1 + ZH2 + 2 \times KötProg) / 4$
 
 
+---
+
+### Bejczy Antal Intelligens Robottechnikai Központ (BARK)
 
 
+![](img/bark_logo.png){:style="width:550px"}
 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8XmKGWBV5Nw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+[https://irob.uni-obuda.hu](https://irob.uni-obuda.hu/?q=en)
+
+---
+
+### irob-saf
+
+(iRob Surgical Automation Framework)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d8aKvtvy1-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7pB6zXom3k0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+[https://github.com/ABC-iRobotics/irob-saf](https://github.com/ABC-iRobotics/irob-saf)
 
+---
 
+### PlatypOUs
 
+[https://github.com/ABC-iRobotics/PlatypOUs-Mobile-Robot-Platform](https://github.com/ABC-iRobotics/PlatypOUs-Mobile-Robot-Platform)
 
+---
 
