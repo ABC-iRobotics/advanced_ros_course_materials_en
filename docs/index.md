@@ -70,7 +70,7 @@ Détár Borsa
 
 A jelenlét az órákon kötelező (min 70%).
 
-A félév elfogadásának feltétele, hogy mind a két ZH, mind a kötelező program értékelése legalább elégséges. A **két ZH közül** az **egyik** az aláíráspótló vizsga alkalmával **pótolható**.
+A félév elfogadásának feltétele, hogy mind a két ZH, mind a kötelező program értékelése legalább elégséges. A **két ZH közül** az **egyik** az utolsó héten **pótolható**. Az aláíráspótló vizsga alkalmával a kötelező program bemutatása pótolható.
 
 !!! abstract "Félév végi jegy"
 	$Jegy = (ZH1 + ZH2 + 2 \times KötProg) / 4$ 
