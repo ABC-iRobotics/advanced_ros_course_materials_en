@@ -3,15 +3,15 @@ title: Bevezetés
 author: Nagy Tamás
 ---
 
-# 01. Bevezetés
+# 01. Introduction
 
 ---
 
-## Robot Operating System (ROS) bevezetés
+## Robot Operating System (ROS) introduction
 
 ---
 
-### A robot fogalma
+### Robot definition
 
 ![](img/what_is_a_robot_1.png){:style="width:300px" align=right}
 
@@ -23,16 +23,16 @@ author: Nagy Tamás
 
 ---
 
-### Mi a ROS?
+### What is ROS?
 
 ![](https://moveit.ros.org/assets/images/logo/ROS_logo.png){:style="width:300px" align=right}
 
-- Open-source, robotikai célú middleware
-- Modularitás, újra-felhasználhatóság (driverek, algoritmusok, library-k, ...)
-- Hardware absztrakció, ROS API
-- C++ és Python támogatás
-- Ubuntu Linux (kivéve ROS 2)
-- Népes közösség
+- Open-source, robotics themed middleware
+- Modularity, reusability (drivers, algorithms, libraries, ...)
+- Hardware abstraction, ROS API
+- C++ és Python support
+- Ubuntu Linux (except ROS 2)
+- Great community
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/639236696?h=740f412ce5" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
 
@@ -40,21 +40,21 @@ author: Nagy Tamás
 ---
 
 
-### Történet
+### History
 
 ![](https://www.freshconsulting.com/wp-content/uploads/2022/06/path-planning-1024x693.jpg){:style="width:300px" align=right}
 
-- 2000-es évek közepe, Stanford: robotikai célú rugalmas, dinamikus szoftverrendszer prototípusok fejlesztése
-- 2007, Willow Garage: inkubáció, kialakult a ROS alapja BSD open-source licensz alatt
-- Robotikai kutatások területén egyre inkább elterjedt, PR2
-- 2012: Ipari robotika, ROS-Industrial
+- Mid 2000s, Stanford: robotics themed, flexible, dynamic framework for prototype development
+- 2007, Willow Garage: incubation, the core of ROS under BSD license
+- Spread in robotics reserach, PR2
+- 2012: Industrial robotics, ROS-Industrial
 - 2017: ROS 2
 
 
 
 ---
 
-## Fejlesztőkörnyezet felállítása - Házi feladat
+## Development system build -- homework
 
 ---
 
