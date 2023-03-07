@@ -1,33 +1,23 @@
-## Kurzussal kapcsolatos információk
+## Course Information
 
 ---
-### Tárgyfelelős
-Dr. Galambos Péter    
+### Course Supervisor
+Dr. Péter Galambos      
 [peter.galambos@irob.uni-obuda.hu](mailto:peter.galambos@irob.uni-obuda.hu)
 
 ---
 
-### Oktatók
-Nagy Tamás    
+### Teachers
+Tamás D. Nagy      
 [tamas.daniel.nagy@irob.uni-obuda.hu](mailto:tamas.daniel.nagy@irob.uni-obuda.hu)
 
-Détár Borsa    
+Borsa Détár      
 [detar.borsa@gmail.com](mailto:detar.borsa@gmail.com)
 
----
-
-## Órarendi információk
-
-
-|           Csoport            | Időpont                | Terem   | 
-|:----------------------------:|------------------------|---------|
-| **1. csoport** _ea. és lab._ | **Péntek 10:45-13:45** | BA.1.10 |                                                                                                                                                                                   
-| **2. csoport** _ea. és lab._ | **Péntek 14:00-17:00** | BA.1.10 |
-
 
 ---
 
-## Féléves ütemezés
+## Schedule
 
 
 | Okt. hét | Dátum    | Témakör                                                                                                                                                                                                       | Számonkérés                    |
@@ -49,36 +39,38 @@ Détár Borsa
 
 
 !!! warning
-    A félév során az ütemezés változhat!
+A félév során az ütemezés változhat!
 
 ---
 
 
-## Követelmények
+## Course Requirements
 
 ---
 
-### Kötelező program
+### Project
 
-- Bizonyítottan saját munka
-- Értékelhető eredményeket produkáljon
-- Pontozás: a megoldás teljessége, megfelelő ROS kommunikáció alkalmazása, program célszerű szerkezete, az implementáció minősége, a kód dokumentálása
-
----
-
-### Évközi jegy
-
-A jelenlét az órákon kötelező (min 70%).
-
-A félév elfogadásának feltétele, hogy mind a két ZH, mind a kötelező program értékelése legalább elégséges. A **két ZH közül** az **egyik** az utolsó héten **pótolható**. Az aláíráspótló vizsga alkalmával a kötelező program bemutatása pótolható.
-
-!!! abstract "Félév végi jegy"
-	$Jegy = (ZH1 + ZH2 + 2 \times KötProg) / 4$ 
+- Proved to be the student's own work
+- Running results valid output
+- Grading: completeness of the soultion, proper ROS communication, proper structure of the program, quality of implementation, documentation
 
 
 ---
 
-### Bejczy Antal Intelligens Robottechnikai Központ (BARK)
+### Grading
+
+Personal attendance on the classes is mandatory (min 70%).
+
+To pass the course, Tests and the Project must be passed (grade 2). One of the Test can be taken again.
+
+
+!!! abstract "Grade"
+$Jegy = (Test1 + Test2 + 2 \times Project) / 4$
+
+
+---
+
+### Antal Bejczy Center for Intelligent Robotics (BARK/IROB)
 
 
 ![](img/bark_logo.png){:style="width:550px"}

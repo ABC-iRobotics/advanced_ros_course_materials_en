@@ -60,8 +60,8 @@ author: Nagy Tamás
 
 ![](https://brandslogos.com/wp-content/uploads/thumbs/ubuntu-logo-vector.svg){:style="width:400px" align=right}
 
-Ajánlott környezet:
-    
+Recommended environment:
+
 - Ubuntu 20.04
 - ROS1 Noetic
 - ROS2 Foxy
@@ -71,12 +71,12 @@ Ajánlott környezet:
 
 ---
 
-## ROS 1 Noetic 
+## ROS 1 Noetic
 
 
 ![](http://wiki.ros.org/noetic?action=AttachFile&do=get&target=noetic.png){:style="width:300px" align=right}
 
-1. ROS Noetic telepítése
+1. Install ROS Noetic
 
     ```bash
     sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -88,19 +88,18 @@ Ajánlott környezet:
     ```
 
     ---
-    
+
 2. ROS 1 dependencies
-    
+
     ```bash
     sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
     sudo rosdep init
     rosdep update
     ```
-   
+
     ---
 
-3. Ha ezzel megvagyunk, a következő parancssal tesztelhetjük a ROS 1 telepítésünket:
-
+3. Once we are done with this, we can test our ROS 1 installation with the following command:
 
     ```bash
     source /opt/ros/noetic/setup.bash
@@ -114,7 +113,7 @@ Ajánlott környezet:
 ![](https://global.discourse-cdn.com/business7/uploads/ros/optimized/2X/d/d6fd5322bd2ddc06530d8352fcab20f0bca08c06_2_861x1024.png){:style="width:300px" align=right}
 
 
-1. Locale beállítása.
+1. Setup locale.
 
     ```bash
     locale  # check for UTF-8
@@ -126,10 +125,10 @@ Ajánlott környezet:
 
     locale  # verify settings
     ```
-   
+
     ---
 
-2. ROS 2 Foxy telepítése
+2. Install ROS 2 Foxy
 
 
     ```bash
@@ -145,8 +144,7 @@ Ajánlott környezet:
 
     ---
 
-3. Ha ezzel megvagyunk, a következő parancssal tesztelhetjük a ROS 2 telepítésünket:
-
+3. Once we are done with this, we can test our ROS 2 installation with the following command:
 
     ```bash
     source /opt/ros/foxy/setup.bash
@@ -154,9 +152,8 @@ Ajánlott környezet:
     ```
 
     ---
-    
-4. A `source` parancs a környezeti változók beállításáért felelős, ezt minden új terminálablak megnyitásakor meg kell(ene) adni. Ez a parancs beilleszthető a `~/.bashrc` fájl végére, amely minden terminálablak megnyitásakor lefut, így nem kell mindig beírnunk (ROS 2 lesz az alapértelmezett):
 
+4. The `source` command is responsible for setting the environment variables, which must be entered every time a new terminal window is opened. This command can be pasted at the end of the `~/.bashrc` file, which will run every time a terminal window is opened, so we don't have to type it all the time (ROS 2 will be the default):
 
     ```bash
     echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
@@ -164,11 +161,10 @@ Ajánlott környezet:
     
 ---
 
-### További csomagok
+### Further packages
 
 
-1. Az alábbi csomagokra is szükség lesz a félév során, így ezeket is érdemes feltelepíteni:
-
+1. The following packages will also be needed during the semester, so it is worth installing them as well:
 
     ```bash
     sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev python3-catkin-tools python3-osrf-pycommon libasound2-dev libgl1-mesa-dev xorg-dev ros-foxy-turtlebot3*
@@ -182,28 +178,27 @@ Ajánlott környezet:
 
 1. QtCreator
 
-    ROS csomagok fejlesztéséhez jelenleg az egyik leginkább használható IDE a QtCreator, melyhez ROS plugin is készült. Az installer az alábbi linken elérhető. A "18.04 **offline** installer"-t érdemes használni, ez működik Ubunutu 20.04-en is.
+QtCreator is currently one of the most usable IDEs for developing ROS packages, for which a ROS plugin has also been created. The installer is available at the link below. You should use the "18.04 **offline** installer", it also works on Ubunutu 20.04.
 
-    [https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html)
+[https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html](https://ros-qtc-plugin.readthedocs.io/en/latest/ _source/How-to-Install-Users.html)
 
-    Ha letöltöttük, az IDE az alábbi paranccsal telepíthető (fontos, hogy `cd`zzünk be a letöltés helyére):
-
+Once downloaded, the IDE can be installed with the following command (it is important to insert `cd` in the download location):
 
     ```bash
     chmod +x qtcreator-ros-bionic-latest-offline-installer.run
     sudo ./qtcreator-ros-bionic-latest-offline-installer.run
     ```
 
-    Amikor a telepítő kérdezi, hova telepítse, módosítsuk pl. `/home/<USER>/QtCreator` mappára. Ha a root-ba teléepítjük, nem fogjuk tudni futtatni. A telepítés után "Qt Creator (4.9.2)" néven keressük.
+    When the installer asks where to install it, change to e.g `/home/<USER>/QtCreator` mappára. Ha a root-ba teléepítjük, nem fogjuk tudni futtatni. A telepítés után "Qt Creator (4.9.2)" néven keressük.
    
     ---
 
 2. CLion
 
-    A CLion magasfokú ROS integrációval rendelkezik, a kurzus során ennek a használata a leginkább ajánlott. Ingyenes hallgatói licensz az alábbi linken igényelhető: [https://www.jetbrains.com/community/education/#students](https://www.jetbrains.com/community/education/#students)
+CLion has a high degree of ROS integration, the use of which is the most recommended during the course. A free student license can be requested at the following link: [https://www.jetbrains.com/community/education/#students](https://www.jetbrains.com/community/education/#students)
 
-    Telepítés után keressük meg a `/var/lib/snapd/desktop/applications/clion-clion.desktop` fájlt. A megfelelő sort írjuk át erre, így a terminál által beállított környezetet fogja használni az IDE:
-
+After installation, find the `/var/lib/snapd/desktop/applications/clion_clion.desktop` file. We rewrite the appropriate line for this, so the environment set by the terminal will be used by the IDE:
+    
     ```bash
     Exec=bash -i -c "/snap/bin/clion" %f
     ```
@@ -211,18 +206,17 @@ Ajánlott környezet:
     ---
 
 3. Visual Studio
-    
-    A Microsoft Visual Studio szintén támogatja a ROS-hoz készült forráskódokat, ez az IDE is használható a félév során.
-    
+
+    Microsoft Visual Studio also supports source codes for ROS, this IDE can also be used during the semester.
     
 ---
 
 !!! tip "Suggestion"
-    Install **Terminator** terminal emulator:
-    ```bash
-    sudo apt update
-    sudo apt install terminator
-    ```
+Install **Terminator** terminal emulator:
+```bash
+sudo apt update
+sudo apt install terminator
+```
 
 
 ---
@@ -237,7 +231,6 @@ Ajánlott környezet:
 - [CLion hallgatói licensz](https://www.jetbrains.com/community/education/#students)
 - [QtCreator + ROS plugin](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/How-to-Install-Users.html)
 - [IROB virtual tour](https://www.youtube.com/watch?v=8XmKGWBV5Nw)
-
 
 
 
