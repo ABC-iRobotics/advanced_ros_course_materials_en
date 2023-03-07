@@ -46,7 +46,7 @@ author: Nagy Tamás
 
 - Mid 2000s, Stanford: robotics themed, flexible, dynamic framework for prototype development
 - 2007, Willow Garage: incubation, the core of ROS under BSD license
-- Spread in robotics reserach, PR2
+- Spread in robotics research, PR2
 - 2012: Industrial robotics, ROS-Industrial
 - 2017: ROS 2
 
