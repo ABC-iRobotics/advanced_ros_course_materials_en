@@ -1,6 +1,6 @@
 ---
-title: Bevezetés
-author: Nagy Tamás
+title: Introduction
+author: Tamás D. Nagy
 ---
 
 # 01. Introduction
