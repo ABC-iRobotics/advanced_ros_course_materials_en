@@ -221,7 +221,7 @@ sudo apt install terminator
 
 ---
 
-## Hasznos linkek
+## Useful links
 
 - [https://www.ros.org/](https://www.ros.org/)
 - [ROS 1 Noetic installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
