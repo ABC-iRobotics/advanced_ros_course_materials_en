@@ -73,6 +73,8 @@ See some basic commands below:
 - Focus on standardization and industry collaboration
 - No ROS Master
 - No Devel space
+- `rclpy`, `rclcpp`
+- More structured code (`Node` class)
 - Different build system
 - Platforms: Windows, OS X, Linux
 
@@ -260,6 +262,23 @@ cmake [label=<
 
 - System for building software packages in ROS
 
+```graphviz dot colcon.png
+digraph colcon {
+
+nodesep=0.1 // increases the separation between nodes
+node [color=Black,fontname=Arial,shape=ellipse,style=filled,fillcolor=moccasin] //All nodes will this shape and colour
+edge [color=Black, style=solid, arrowhead=open] //All the lines look like this
+  
+   amentpython [label="ament_python"]
+   amentcmake [label="ament_cmake"]
+   g [label="g++"]
+   
+   colcon->{amentpython,amentcmake}
+   amentpython->install
+   amentcmake->CMake->g
+}
+```
+
 
 ---
 
@@ -275,8 +294,9 @@ cmake [label=<
 - ROS can find any resources that have been installed or built to that location
 
 ```bash
-source ~/catkin_ws/devel/setup.bash
+source ~/ros2_ws/install/setup.bash
 ```
+
 
 
 ---
@@ -457,7 +477,7 @@ source ~/catkin_ws/devel/setup.bash
     
     
     if __name__ == '__main__':
-    main()
+        main()
     ```
 
 
@@ -467,7 +487,7 @@ source ~/catkin_ws/devel/setup.bash
 3. Add a new entry point in the `setup.py` file:
 
     ```python
-    'talker = ros3_course.talker:main',
+    'talker = ros2_course.talker:main',
     ```
     
    ---
@@ -537,7 +557,7 @@ source ~/catkin_ws/devel/setup.bash
 2. Add a new entry point in the `setup.py` file:
 
     ```python
-    'listener = ros3_course.listener:main',
+    'listener = ros2_course.listener:main',
     ```
 
     ---
