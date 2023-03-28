@@ -395,12 +395,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          3. Python alapismeretek,  ROS Publisher, ROS Subscriber
+          3. Python principles,  ROS Publisher, ROS Subscriber
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        3. Python alapismeretek,  ROS Publisher, ROS Subscriber
+        3. Python principles,  ROS Publisher, ROS Subscriber
       </a>
       
         
@@ -649,28 +649,22 @@
 <hr />
 <h3 id="1-move-the-turtle-in-a-straight-line">1: Move the turtle in a straight line</h3>
 <ol>
-<li>Let's write a ROS node that moves the turtle forward along a straight line for a given distance.
-   Let's open a terminal. Let's create <code>~/ros2_ws/src/ros2_course/ros2_course</code>
-   the <code>turtlesim_controller.py</code> file in our directory:</li>
-</ol>
+<li>
+<p>Let's write a ROS node that moves the turtle forward along a straight line for a given distance.
+Let's open a terminal. Let's create <code>~/ros2_ws/src/ros2_course/ros2_course</code>
+the <code>turtlesim_controller.py</code> file in our directory:</p>
 <p><img align="right" alt="" src="../img/turtle_straight.png" style="width:300px" /></p>
-<pre><code>```bash
-cd ros2_ws/src/ros2_course/ros2_course
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ros2_ws/src/ros2_course/ros2_course
 touch turtlesim_controller.py
-```
-
-
----
-</code></pre>
-<ol>
+</code></pre></div>
+<hr />
+</li>
 <li>
 <p>Add a new entry point in the <code>setup.py</code> file:</p>
 <div class="highlight"><pre><span></span><code><span class="s1">&#39;turtlesim_controller = ros2_course.turtlesim_controller:main&#39;</span><span class="p">,</span>
 </code></pre></div>
-</li>
-</ol>
 <hr />
-<ol>
+</li>
 <li>
 <p>Copy the skeleton of the program into <code>turtlesim_controller.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
@@ -701,13 +695,11 @@ touch turtlesim_controller.py
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
-</li>
-</ol>
 <hr />
-<ol>
+</li>
 <li>
 <p>Let's start a <code>turtlesim_node</code> and then examine the topic,
-   with which we can control. In two separate terminal windows:</p>
+with which we can control. In two separate terminal windows:</p>
 <div class="highlight"><pre><span></span><code>ros2 run turtlesim turtlesim_node
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>ros2 topic list
@@ -720,7 +712,7 @@ ros2 interface show geometry_msgs/msg/Twist
 <hr />
 </li>
 <li>
-<p>Import the message type <code>geometry_msgs/msg/Twist' and create the publisher in</code>turtlesim_controller.py`:</p>
+<p>Import the message type <code>geometry_msgs/msg/Twist</code> and create the publisher in <code>turtlesim_controller.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">geometry_msgs.msg</span> <span class="kn">import</span> <span class="n">Twist</span>
 
 <span class="c1">#...</span>
@@ -732,10 +724,10 @@ ros2 interface show geometry_msgs/msg/Twist
 </li>
 <li>
 <p>We implement the <code>go_straight</code> method. Let's calculate how long it takes,
-   so that the turtle covers the given distance at the given speed. Publish a message
-   with which we set the speed, then wait for the calculated time, after that
-   send another message to reset the speed.
-   A little help for using the API:</p>
+so that the turtle covers the given distance at the given speed. Publish a message
+with which we set the speed, then wait for the calculated time, after that
+send another message to reset the speed.
+A little help for using the API:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create and publish msg</span>
 <span class="n">vel_msg</span> <span class="o">=</span> <span class="n">Twist</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">distance</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -778,15 +770,15 @@ ros2 interface show geometry_msgs/msg/Twist
 colcon build --symlink-install
 ros2 run ros2_course turtlesim_controller
 </code></pre></div>
+<hr />
 </li>
 </ol>
-<hr />
 <h3 id="2-draw-shapes">2: Draw shapes</h3>
 <p><img align="right" alt="" src="../img/turtle_hex.png" style="width:300px" /></p>
 <ol>
 <li>
 <p>Let's implement the method for turning with a given angle a
-   in <code>turtlesim_controller.py</code>, similar to straight motion.</p>
+in <code>turtlesim_controller.py</code>, similar to straight motion.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">turn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
         <span class="c1"># Implement rotation here</span>
 </code></pre></div>
@@ -794,14 +786,14 @@ ros2 run ros2_course turtlesim_controller
 </li>
 <li>
 <p>Let's implement the straight movement method of drawing a square with a turtle
-   and using the methods that perform the turn.</p>
+and using the methods that perform the turn.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_square</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
 </code></pre></div>
 <hr />
 </li>
 <li>
 <p>Let's implement the method of drawing any regular shape with a turtle
-   using the methods that perform straight movement and turning.</p>
+using the methods that perform straight movement and turning.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
 </code></pre></div>
 <hr />
@@ -838,10 +830,8 @@ ros2 interface show turtlesim/msg/Pose
     <span class="k">def</span> <span class="nf">cb_pose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pose</span> <span class="o">=</span> <span class="n">msg</span>  
 </code></pre></div>
-</li>
-</ol>
 <hr />
-<ol>
+</li>
 <li>
 <p>We implement the <code>go_to</code> method. Let's test it, call it from main.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ...</span>
