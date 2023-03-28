@@ -74,10 +74,10 @@ if __name__ == "__main__":
 
 
 1. Let's write a ROS node that moves the turtle forward along a straight line for a given distance.
-   Let's open a terminal. Let's create `~/ros2_ws/src/ros2_course/ros2_course`
-   the `turtlesim_controller.py` file in our directory:
+Let's open a terminal. Let's create `~/ros2_ws/src/ros2_course/ros2_course`
+the `turtlesim_controller.py` file in our directory:
 
-   ![](img/turtle_straight.png){:style="width:300px" align=right}
+    ![](img/turtle_straight.png){:style="width:300px" align=right}
 
     ```bash
     cd ros2_ws/src/ros2_course/ros2_course
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     'turtlesim_controller = ros2_course.turtlesim_controller:main',
     ```
     
-   ---
+    ---
 
 
 
@@ -129,10 +129,10 @@ if __name__ == "__main__":
         main()
     ```
     
-   ---
+    ---
 
 4. Let's start a `turtlesim_node` and then examine the topic,
-   with which we can control. In two separate terminal windows:
+with which we can control. In two separate terminal windows:
 
     ```bash
     ros2 run turtlesim turtlesim_node
@@ -152,7 +152,7 @@ if __name__ == "__main__":
 
     ---
 
-5. Import the message type `geometry_msgs/msg/Twist' and create the publisher in `turtlesim_controller.py`:
+5. Import the message type `geometry_msgs/msg/Twist` and create the publisher in `turtlesim_controller.py`:
 
     ```python
     from geometry_msgs.msg import Twist
@@ -168,10 +168,10 @@ if __name__ == "__main__":
 
 
 6. We implement the `go_straight` method. Let's calculate how long it takes,
-   so that the turtle covers the given distance at the given speed. Publish a message
-   with which we set the speed, then wait for the calculated time, after that
-   send another message to reset the speed.
-   A little help for using the API:
+so that the turtle covers the given distance at the given speed. Publish a message
+with which we set the speed, then wait for the calculated time, after that
+send another message to reset the speed.
+A little help for using the API:
 
 
     ```python
@@ -221,7 +221,7 @@ if __name__ == "__main__":
     ros2 run ros2_course turtlesim_controller
     ```
     
-   ---
+    ---
 
 
 ### 2: Draw shapes
@@ -229,7 +229,7 @@ if __name__ == "__main__":
 ![](img/turtle_hex.png){:style="width:300px" align=right}
 
 1. Let's implement the method for turning with a given angle a
-   in `turtlesim_controller.py`, similar to straight motion.
+in `turtlesim_controller.py`, similar to straight motion.
 
 
     ```python
@@ -240,7 +240,7 @@ if __name__ == "__main__":
     ---
 
 2. Let's implement the straight movement method of drawing a square with a turtle
-   and using the methods that perform the turn.
+and using the methods that perform the turn.
 
     ```python
     def draw_square(self, speed, omega, a):
@@ -249,7 +249,7 @@ if __name__ == "__main__":
     ---
 
 3. Let's implement the method of drawing any regular shape with a turtle
-   using the methods that perform straight movement and turning.
+using the methods that perform straight movement and turning.
 
     ```python
     def draw_poly(self, speed, omega, N, a):
@@ -299,7 +299,7 @@ if __name__ == "__main__":
             self.pose = msg  
     ```
     
-   ---
+    ---
 
 
 3. We implement the `go_to` method. Let's test it, call it from main.
