@@ -1,6 +1,6 @@
 ---
 title: Python principles, ROS Publisher, ROS Subscriber
-author: Tamás Nagy
+author: Tamas Nagy
 ---
 
 # 03. Python principles, ROS Publisher, ROS Subscriber
