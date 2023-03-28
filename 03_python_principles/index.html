@@ -468,15 +468,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-go-to-funkcio-implementalasa" class="md-nav__link">
-    3: Go to funkció implementálása
+  <a href="#3-go-to-function" class="md-nav__link">
+    3: Go to function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bonusz-advanced-go-to" class="md-nav__link">
-    Bónusz: Advanced go to
+  <a href="#extra-advanced-go-to" class="md-nav__link">
+    Extra: Advanced go to
   </a>
   
 </li>
@@ -785,44 +785,44 @@ ros2 run ros2_course turtlesim_controller
 <p><img align="right" alt="" src="../img/turtle_hex.png" style="width:300px" /></p>
 <ol>
 <li>
-<p>Implementáljunk adott szöggel történő elfordulást megvalósító metódust a
-   <code>turtlesim_controller.py</code>-ban, az egyenes mozgásshoz hasonló módon.</p>
+<p>Let's implement the method for turning with a given angle a
+   in <code>turtlesim_controller.py</code>, similar to straight motion.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">turn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
         <span class="c1"># Implement rotation here</span>
 </code></pre></div>
 <hr />
 </li>
 <li>
-<p>Implementáljunk a teknőccel négyzetet rajzoltató metódust az egyenes mozgást
-   és a fordulást végrehajtó metódusok felhasználásával.</p>
+<p>Let's implement the straight movement method of drawing a square with a turtle
+   and using the methods that perform the turn.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_square</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
 </code></pre></div>
 <hr />
 </li>
 <li>
-<p>Implementáljunk a teknőccel tetszőleges szabályos alakzatot rajzoltató metódust
-   az egyenes mozgást és a fordulást végrehajtó metódusok felhasználásával.</p>
+<p>Let's implement the method of drawing any regular shape with a turtle
+   using the methods that perform straight movement and turning.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_poly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
 </code></pre></div>
 <hr />
 </li>
 </ol>
-<h3 id="3-go-to-funkcio-implementalasa">3: Go to funkció implementálása</h3>
+<h3 id="3-go-to-function">3: Go to function</h3>
 <p><img align="right" alt="" src="../img/turtle_goto.png" style="width:300px" /></p>
 <ol>
 <li>
-<p>Vizsgáljuk meg a topic-ot, amelyen a <code>turtlesim_node</code> a pillanatnyi pozícióját publikálja.</p>
+<p>Let's examine the topic on which <code>turtlesim_node</code> publishes its current position.</p>
 <div class="highlight"><pre><span></span><code>ros2 topic list
 ros2 topic info /turtle1/pose
 ros2 interface show turtlesim/msg/Pose
 </code></pre></div>
-<p>Vagy használjuk az <code>rqt_gui</code>-t:  </p>
+<p>Or use <code>rqt_gui</code>:  </p>
 <div class="highlight"><pre><span></span><code>ros2 run rqt_gui rqt_gui
 </code></pre></div>
 <hr />
 </li>
 <li>
-<p>Definiáljunk subscriber-t a topichoz és írjuk meg a callback függvényt.</p>
+<p>Let's define a subscriber for the topic and write the callback function.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Imports</span>
 <span class="kn">from</span> <span class="nn">turtlesim.msg</span> <span class="kn">import</span> <span class="n">Pose</span>
 
@@ -843,7 +843,7 @@ ros2 interface show turtlesim/msg/Pose
 <hr />
 <ol>
 <li>
-<p>Implementáljuk a <code>go_to</code> metódust. Teszteljük, hívjuk meg a main-ből.</p>
+<p>We implement the <code>go_to</code> method. Let's test it, call it from main.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ...</span>
 
 <span class="c1"># Go to method</span>
@@ -877,8 +877,8 @@ ros2 interface show turtlesim/msg/Pose
 </ol>
 <p><img alt="" src="img/turtle_atan2.png" style="width:600px" /></p>
 <hr />
-<h3 id="bonusz-advanced-go-to">Bónusz: Advanced go to</h3>
-<p>Írjunk arányos szabályozót használó go to funckiót.</p>
+<h3 id="extra-advanced-go-to">Extra: Advanced go to</h3>
+<p>Write a go to function that uses a proportional controller.</p>
 <hr />
 <h2 id="useful-links">Useful links</h2>
 <ul>
