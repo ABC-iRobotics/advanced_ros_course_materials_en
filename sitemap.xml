@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/04_roslaunch/</loc>
+         <lastmod>2023-03-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/05_da_vinci/</loc>
          <lastmod>2023-03-28</lastmod>
          <changefreq>daily</changefreq>
