@@ -228,8 +228,8 @@ if __name__ == "__main__":
 
 ![](img/turtle_hex.png){:style="width:300px" align=right}
 
-1. Implementáljunk adott szöggel történő elfordulást megvalósító metódust a
-   `turtlesim_controller.py`-ban, az egyenes mozgásshoz hasonló módon.
+1. Let's implement the method for turning with a given angle a
+   in `turtlesim_controller.py`, similar to straight motion.
 
 
     ```python
@@ -239,8 +239,8 @@ if __name__ == "__main__":
     
     ---
 
-2. Implementáljunk a teknőccel négyzetet rajzoltató metódust az egyenes mozgást
-   és a fordulást végrehajtó metódusok felhasználásával.
+2. Let's implement the straight movement method of drawing a square with a turtle
+   and using the methods that perform the turn.
 
     ```python
     def draw_square(self, speed, omega, a):
@@ -248,8 +248,8 @@ if __name__ == "__main__":
 
     ---
 
-3. Implementáljunk a teknőccel tetszőleges szabályos alakzatot rajzoltató metódust
-   az egyenes mozgást és a fordulást végrehajtó metódusok felhasználásával.
+3. Let's implement the method of drawing any regular shape with a turtle
+   using the methods that perform straight movement and turning.
 
     ```python
     def draw_poly(self, speed, omega, N, a):
@@ -258,12 +258,11 @@ if __name__ == "__main__":
     ---
 
 
-### 3: Go to funkció implementálása
+### 3: Go to function
 
 ![](img/turtle_goto.png){:style="width:300px" align=right}
 
-1. Vizsgáljuk meg a topic-ot, amelyen a `turtlesim_node` a pillanatnyi pozícióját publikálja.
-
+1. Let's examine the topic on which `turtlesim_node` publishes its current position.
 
     ```bash
     ros2 topic list
@@ -272,7 +271,7 @@ if __name__ == "__main__":
     ```
 
 
-    Vagy használjuk az `rqt_gui`-t:  
+    Or use `rqt_gui`:  
 
 
     ```bash
@@ -281,7 +280,7 @@ if __name__ == "__main__":
     
     --- 
 
-2. Definiáljunk subscriber-t a topichoz és írjuk meg a callback függvényt.
+2. Let's define a subscriber for the topic and write the callback function.
 
     ```python
     # Imports
@@ -303,7 +302,7 @@ if __name__ == "__main__":
    ---
 
 
-3. Implementáljuk a `go_to` metódust. Teszteljük, hívjuk meg a main-ből.
+3. We implement the `go_to` method. Let's test it, call it from main.
 
     ```python
     # ...
@@ -340,9 +339,9 @@ if __name__ == "__main__":
 
 ---
 
-### Bónusz: Advanced go to
+### Extra: Advanced go to
 
-Írjunk arányos szabályozót használó go to funckiót.
+Write a go to function that uses a proportional controller.
 
     
 ---
