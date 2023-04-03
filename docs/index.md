@@ -20,26 +20,24 @@ Borsa Détár
 ## Schedule
 
 
-| Okt. hét | Dátum    | Témakör                                                                                                                                                                                                       | Számonkérés                    |
-|:--------:|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
-|    1.    | márc. 3  | [Követelmények ismertetése. ROS bevezetés. Fejlesztőkörnyezet felállítása.](01_system_setup.md)                                                                                                               | -                              |
-|    2.    | márc. 10 | [Fejlesztőkörnyezet felállítása. Linux alapok. ROS 1 és ROS 2. Egyszerű próbakódok futtatása. ROS package. Az alapvető ROS kommunikáció, publisher és subscriber implementálása.](02_linux_ros_principles.md) | -                              |
-|    3.    | márc. 17 | [Python alapok. ROS kommunikáció implementációjának gyakorlása, példafeladatok megoldása.](03_python_principles.md)                                                                                           | -                              |
-|    4.    | márc. 24 | [Robotikai alapfogalmak, da Vinci sebészrobot programozása szimulált környezetben I.](05_da_vinci.md)                                                                                                         | -                              |
-|    5.    | márc. 31 | [Verziókövetés, Git.](04_git.md) Projekt labor I.                                                                                                                                                             | -                              |
-|    7.    | ápr. 14  | [Roslaunch, ROS paraméter szerver. Rosbag.](06_roslaunch.md)                                                                                                                                                  | -                              |
-|    8.    | ápr. 21  | Saját üzenetek definiálása. ROS service, ROS action fogalma, felhasználása.                                                                                                                                   | **ZH1**                        |
-|    9.    | ápr. 28  | [Kinematika, inverz kinematika, szimulált robotkar programozása csukló-, és munkatérben I.](07_robotics_principles.md)                                                                                        | -                              |
-|   10.    | máj. 5   | URDF, webes felületek illesztése: RosBridge és RoslibJS.                                                                                                                                                      | -                              |
-|   11.    | máj. 12  | Kálmán-szűrő. Szenzoros adatok gyűjtése és feldolgozása ROS környezetben.                                                                                                                                     | -                              |
-|   12.    | máj. 19  | Szenzorfúzió Kálmán-szűrővel.  Odometria-IMU szenzorfúzió implementációja mobil robot platformra.                                                                                                             | -                              |
-|   13.    | máj. 26  | Projekt labor II.                                                                                                                                                                                             | **ZH2**                        |
-|   14.    | jún. 2   | Kötelező programok bemutatása.                                                                                                                                                                                | **Pót ZH**                     |
-|  14+1.   | jún. 9   | -                                                                                                                                                                                                             | Aláíráspótló: **csak kötprog** |
+| Week  | Date     | Topic                                                                                         | Test            |
+|:-----:|----------|-----------------------------------------------------------------------------------------------|-----------------|
+|  2.   | March 7  | [Course requirements. Introduction, System setup.](01_system_setup.md)                        | -               |
+|  4.   | March 21 | [Linux, ROS introduction.](02_linux_ros_principles.md)                                        | -               |
+|  5.   | March 28 | [Python principles, ROS Publisher, ROS Subscriber.](03_python_principles.md) Projekt labor I. | -               |
+|  6.   | April 4  | [ROS 2 Launch, ROS 2 Param, ROS 2 Bag.](04_roslaunch.md)                                      | -               |
+|  8.   | April 18 | [Git.](05_git.md) Project lab I.                                                              | -               |
+|  9.   | April 25 | [Principles of robotics, da Vinci I.](06_da_vinci.md)                                         | -               |
+|  10.  | May 2    | [Principles of robotics, da Vinci II.](06_da_vinci.md)                                        | -               |
+|  11.  | May 9    | [Kinematics, Inverse kinematics I.](07_robotics_principles.md)                                | -               |
+|  12.  | May 16   | [Kinematics, Inverse kinematics II.](07_robotics_principles.md)                               | **Test**        |
+|  13.  | May 23   | Project lab II.                                                                               | -               |
+|  14.  | May 30   | Project presentations.                                                                        | **Test retake** |
+| 14+1. | June 6   | -                                                                                             | -               |
 
 
 !!! warning
-A félév során az ütemezés változhat!
+    The schedule may change during the semester!
 
 ---
 
@@ -65,7 +63,7 @@ To pass the course, Tests and the Project must be passed (grade 2). One of the T
 
 
 !!! abstract "Grade"
-$Jegy = (Test1 + Test2 + 2 \times Project) / 4$
+    $Grade = (Test1 + Test2 + 2 \times Project) / 4$
 
 
 ---

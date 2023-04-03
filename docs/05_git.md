@@ -3,13 +3,13 @@ title: Verziókövetés, Git
 author: Nagy Tamás
 ---
 
-# 04. Verziókövetés, Git
+# 06. VCS, Git
 
 ![](img/under_construction.png){:style="width:400px"}
 
 ---
 
-## Elmélet
+## Lecture
 
 --- 
 

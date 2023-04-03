@@ -3,147 +3,205 @@ title: Követelmények
 author: Tamas D. Nagy
 ---
 
-# Kötelező Program
+# Projects
 
 ---
 
 
-## Nehézségi fokozatok és érdemjegyek
+## Challenge levels and grades
 
 ---
 
-A kötelező programok három *nehézségi fokozatban* teljesíthetők. A *nehézségi fok* meghatározza a **legjobb** érdemjegyet, amely a teljesítéséért kapható! 
+Projects can be completed at three *Challenge levels*. The *Challenge level* determines the  **best** grade that can be received to the project!
 
-| Nehézségi fok | Legjobb megszerezhető érdemjegy |
+| Challenge level  | Best grade |
 | -------- | :-------: |
 | Basic    |     3 |
 | Advanced |     4 |
 | Epic     |     5 |
 
 !!! tip
-	A feladatok úgy vannak megadva, hogy érdemes a **Basic** szinttel kezdeni, és onnan fokozatosan építkezni az **Epic** szintig.
+    The projects are defined in a way that it is recommended to tart with the **Basic** level, and then gradually work 
+towards **Epic**.
 
-A kötelező programok a következő szempontok szerint kerülnek értékelésre: 
+The projects are graded based on the follwoing aspects:
 
-- Bizonyítottan saját munka
-- Értékelhető eredményeket produkáljon
-- Verziókövetés használata, feltöltés GitHub/GitLab/egyéb repoba
-- Értékelési szempontok:
-    - a megoldás teljessége
-    - megfelelő ROS kommunikáció alkalmazása
-    - program célszerű szerkezete
-    - az implementáció minősége
-    - a kód dokumentálása
-
----
-
-## Ütemezés
+- Proved to be the student's own work
+- Running results valid output
+- Usage of versioning, usage of GitHub/GitLab/other repository
+- Launch files
+- Completeness of the solution
+- Proper ROS communication
+- Proper structure of the program
+- Quality of implementation
+- Documentation quality
 
 ---
 
-| Okt. hét | Dátum      | Számonkérés |
-|:--------:| ---------- | ----------- |
-|2.| szept. 13  | Kötelező programok ismertetése. |
-|8.| okt. 25  | Kötelező program mérföldkő.|
-|14.| nov. 6 | Kötelező programok bemutatása. |
+## Schedule
 
 ---
 
-## Évközi jegy
+| Week | Date     | Event                  |
+|:----:|----------|------------------------|
+|  8.  | April 18 | Project lab I.         |
+| 13.  | May 23   | Project lab II.        |
+| 14.  | May 30   | Project presentations. |
 
 ---
 
-A félév elfogadásának feltétele, hogy mind a két ZH, mind a kötelező program értékelése legalább elégséges. A két ZH közül az egyik az utolsó óra alkalmával pótolható.
-
-!!! abstract "Félév végi jegy"
-	$Jegy = (ZH1 + ZH2 + 2 \times KötProg) / 4$ 
+## Grading
 
 ---
 
+To pass the course, Tests and the Project must be passed (grade 2). One of the Test can be taken again.
 
-## Kötelező program témák
+!!! abstract "Grade"
+    $Grade = (Test1 + Test2 + 2 \times Project) / 4$
+	
+---
+---
+
+
+## Project topics
 
 ---
 
-### 1. PlatypOUs 
-
----
+### 1. TurtleBot3
 
 
-![](https://i.imgur.com/mCuxG54.png)
+[TurtleBot3 ROS tutorial](https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Turtlebot.html)
 
-#### 1.1. PlatypOUs pályakövetés
-
-
-
-- **Basic:** Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.
-- **Advanced:** ROS rendszer implementálása pályakövetésre szimulált környezetben bármely szenzor felhasználásával(pl. fal mellett haladás adott távolságra LIDAR segítségével).
-- **Epic:** Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!
-
-#### 1.2. PlatypOUs akadály elkerülés
-
-- **Basic:** Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.
-- **Advanced:** ROS rendszer implementálása akadály felismerésére és az akadályt kikerülő trajektória tervezésére és megvalósítására szimulált környezetben bármely szenzor felhasználásával.
-- **Epic:** Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!
-
-#### 1.3. PlatypOUs objektum követés
-
-- **Basic:** Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.
-- **Advanced:** ROS rendszer implementálása objektum megkeresésére/felismerésére és követésére/megközelítésére szimulált környezetben bármely szenzor felhasználásával (pl. visual servoing).
-- **Epic:** Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!
-
-#### 1.4. PlatypOUs action library
-
-- **Basic:** Szimulátor élesztése, SLAM tesztelése. ROS node/node-ok implementálása szenzorok adatainak beolvasására és a a robot mozgatására.
-- **Advanced:** Egyszerű műveleteket tartalmazó, ROS action alapú könyvtár és ezeket végrehajtó rendszer implementálása (pl. push object, move to object, turn around).
-- **Epic:** Implementáció és tesztelés a valós hardware-en és/vagy nyűgözz le!
 
 
 ---
 
-### 2. AMBF
+#### 1.1. TurtleBot obstacle avoidance
+
+
+![turtlebot_world.png](img%2Fturtlebot_world.png){:style="width:380px" align=right}
+
+- **Basic:** Simulator animation, SLAM testing. Implement ROS node/nodes to read sensor data and move the robot.
+- **Advanced:** Implement ROS system to detect obstacle and plan and implement obstacle avoidance trajectory in simulated environment using any sensor.
+- **Epic:** Impress me!
+
+---
+
+#### 1.2. TurtleBot path following
+
+![](https://robots.ros.org/assets/img/robots/turtlebot3/turtlebot3.png){:style="width:380px" align=right}
+
+
+
+- **Basic:** Simulator animation, SLAM testing. Implement ROS node/nodes to read sensor data and move the robot.
+- **Advanced:** Implement ROS system for tracking in a simulated environment using any sensor (e.g. passing a wall at a given distance using LIDAR).
+- **Epic:** Impress me!
+<!--suppress XmlDeprecatedElement -->
+<font size="1"> Image source: https://robots.ros.org/turtlebot3/ </font>
+
+
+---
+
+#### 1.3. TurtleBot object tracking/visual servoing
+
+- **Basic:** Simulator animation, SLAM testing. Implement ROS node/nodes to read sensor data and move the robot.
+- **Advanced:** Implement ROS system to find/recognize object and track/move it in simulated environment using any sensor (e.g. visual servoing).
+- **Epic:** Impress me!
+
+---
+
+#### 1.4. TurtleBot action library
+
+- **Basic:** Simulator animation, SLAM testing. Implement ROS node/nodes to read sensor data and move the robot.
+- **Advanced:** Implement a ROS action-based library of simple operations and a system to execute them (e.g. push object, move to object, turn around).
+- **Epic:** Impress me!
+
+
+
+---
+
+### 2. YouBot
+
+<iframe width="560" height="315" align="right" src="https://www.youtube.com/embed/qvBEQsGvC3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+[YouBot controller GitHub](https://github.com/ABC-iRobotics/YoubotDriver/tree/ROS)
 
 ---
 
 
-#### 2.1. da Vinci sebészrobot ROS integrációja AMBF szimulátorban
+#### 2.1. YouBot ROS integration
 
-![](https://i.imgur.com/tmhAkwg.png)
+- **Basic:** YouBot repo build, getting to know it
+- **Advanced:** Moving a simulated robot in an articulated ROS environment
+- **Epic:** Testing on real robot and/or impress me!
 
-- **Basic:** Szimulátor élesztése, robot vezérlése joint space-ben és task space-ben (IK már implementálva AMBF-ben) ROS-ból CRTK szerinti topic-okon keresztül
-- **Advanced:** Objektumok detektálása *Peg transfer puzzle*-ben
-- **Epic:** Autonóm manipuláció *Peg transfer*-en és/vagy nyűgözz le!
-
-#### 2.2. KUKA robotkar ROS integrációja AMBF szimulátorban
-
-![](https://i.imgur.com/4FyvHM5.png)
-
-- **Basic:** Szimulátor élesztése, robot vezérlése joint space-ben ROS-ból
-- **Advanced:** Robot vezérlése task space-ben, IK?
-- **Epic:** Trajektóriatervezés
-
-#### 2.3. PR2 humanoid robot ROS integrációja AMBF szimulátorban
-
-![](https://i.imgur.com/tGCClwQ.png)
-
-- **Basic:** Szimulátor élesztése, robot vezérlése joint space-ben ROS-ból
-- **Advanced:** Robot vezérlése task space-ben, IK?
-- **Epic:** Trajektóriatervezés/Navigáció/Manipuláció
 
 ---
 
-### X. Saját téma
+### 3. AMBF
+
+[AMBF GitHub](https://github.com/WPI-AIM/ambf)
+
+!!! tip "Building AMBF"
+    Fork AMBF, then clone our fork:
+    ```bash
+    cd ~/ros2_ws/src
+    git clone <MY_AMBF_FORK.git>
+    ```
+    Don't use make as suggested in the AMBF documentation, use colcon:
+    ```bash
+    cd ~/ros2_ws
+    colcon build --symlink-install
+    ```    
+    Launch the simulator:
+    ```bash    
+    cd ~/ros2_ws/src/ambf/bin/lin-x86_64
+    ./ambf_simulator -l 4
+    ```
 
 ---
 
-Megegyezés alapján.
+
+#### 3.1. AMBF da Vinci ROS integration
+
+![ambf_psm.png](img%2Fambf_psm.png){:style="width:200px" align=right}
+
+- **Basic:** Simulator animation, robot control in joint space and task space (IK already implemented in AMBF) from ROS via CRTK topics
+- **Advanced:** Object detection in *Peg transfer puzzle
+- **Epic:** Autonomous manipulation in *Peg transfer* and/or impress me!
+
+#### 3.2. AMBF KUKA arm ROS integration
+
+![ambf_kuka.png](img%2Fambf_kuka.png){:style="width:200px" align=right}
+
+
+- **Basic:** Simulator animation, robot control in joint space from ROS
+- **Advanced:** Generate trajectories in joint space
+- **Epic:** Implement inverse kinematics and/or impress me!
+
+#### 3.3. AMBF PR2 humanoid ROS integration
+
+![ambf_pr2.png](img%2Fambf_pr2.png){:style="width:200px" align=right}
+
+- **Basic:** Simulator animation, robot control in joint space from ROS
+- **Advanced:** Robot control in task space, IK?
+- **Epic:** Trajectory planning/Navigation/Manipulation and/or impress me!
 
 ---
 
-## Hasznos linkek
+### X. Own topic
 
-- [Gazebo ROS packages](http://wiki.ros.org/gazebo_ros_pkgs)
-- [PlatypOUs](https://github.com/ABC-iRobotics/PlatypOUs-Mobile-Robot-Platform)
+---
+
+By discussion.
+
+---
+
+## Useful links
+
+- [TurtleBot3 Simulation](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/)
+- [TurtleBot3 Tutorial](https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Turtlebot.html)
 - [AMBF](https://github.com/WPI-AIM/ambf)
 - [My fork of AMBF](https://github.com/TamasDNagy/ambf)
 - [CRTK topics](https://github.com/jhu-cisst/cisst/blob/devel/utils/crtk-port/crtk-ros-commands.dict)
