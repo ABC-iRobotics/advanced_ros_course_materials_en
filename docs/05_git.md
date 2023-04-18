@@ -1,13 +1,9 @@
 ---
-title: Verziókövetés, Git
-author: Nagy Tamás
+title: VCS, Git
+author: Tamas Nagy
 ---
 
-# 06. VCS, Git
-
-![](img/under_construction.png){:style="width:400px"}
-
----
+# 05. VCS, Git
 
 ## Lecture
 
@@ -104,15 +100,85 @@ git push -u origin master
 
 ---
 
-## Gyakorlat
+## Practice
 
 ---
 
-### 0: GitHub repo létrehozása
+### 0: Create a GitHub repo
 
-1. Inicializáljunk egy lokális git repo-t a `ros-course` package-ben.
-2. Regisztráljunk GitHub-ra, majd hozzunk létre egy private repo-t a `ros_course` package számára. Állítsuk be a local repo-ban a remote-ot, majd push-oljuk a package tartalmát.
+---
 
+1. Register to GitHub, then create a token.
+
+    ---
+
+2. Create a private repo on GitHub for the `ros2_course` package.
+
+
+    !!! tip
+        **Store personal token:** `git config --global credential.helper store`
+
+
+    ---
+
+
+3. Create the local repo, set up remote, then push the package contents to GitHUb (GitHub will also help after the repo is created):
+
+    ```bash
+    cd ~/ros2_ws/src/ros2_course
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main
+    git remote add origin <REPO_GITHUB_ADDRESS>.git
+    git push -u origin main
+    ```
+
+
+
+    ---
+
+
+4. Add a README.md to the ros2_course package with the following content:
+
+    ```markdown
+    # ros2_course
+
+    ## About
+    
+    Something about the package.
+
+    ## Usage
+   
+    How to *build* and use the package.
+   
+        cd ~/ros2_ws
+        colcon build --symlink-install
+    ```
+    
+   ---
+
+5. Commit and push changes:
+
+    ```bash
+    git add .
+    git commit -m "Add README"
+    git push
+    ```
+
+    !!! tip "VCS in Clion"
+        The use of GitHub can also be configured in CLion, so you can manage versions in a graphical interface.
+
+---
+
+!!! tip
+    **Windows and Linux clock problem:** `timedatectl set-local-rtc 1 --adjust-system-clock`
+
+---
+
+## Useful links
+
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 
 
