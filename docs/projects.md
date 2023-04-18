@@ -1,5 +1,5 @@
 ---
-title: Követelmények
+title: Projects
 author: Tamas D. Nagy
 ---
 
