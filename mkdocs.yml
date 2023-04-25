@@ -13,8 +13,7 @@ nav:
       - 4. ROS 2 Launch, Param, Bag: 04_roslaunch.md
       - 5. Versioning, Git: 05_git.md
       - 6. Principles of robotics, da Vinci: 06_da_vinci.md
-      - 7. Roslaunch, msg, action, service: 06_roslaunch.md
-      - 8. Kinematics, inverse kinematics: 07_robotics_principles.md
+      - 7. Kinematics, inverse kinematics: 07_robotics_principles.md
   - Projects: projects.md
 
 

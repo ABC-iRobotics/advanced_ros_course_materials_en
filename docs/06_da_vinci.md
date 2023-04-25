@@ -1,106 +1,92 @@
 ---
-title: Robotikai alapfogalmak, da Vinci sebészrobot programozása szimulált környezetben, ROS1-ROS2 bridge
-author: Nagy Tamás
+title: Principles of robotics, programming a da Vinci surgical robot in a simulated environment, ROS1-ROS2 bridge
+author: Tamas Nagy
 ---
 
-# 06. Robotikai alapfogalmak, da Vinci sebészrobot programozása szimulált környezetben, ROS1-ROS2 bridge
-
-![](img/under_construction.png){:style="width:400px"}
-
+# 06. Principles of robotics, programming a da Vinci surgical robot in a simulated environment, ROS1-ROS2 bridge
 ---
 
-## Elmélet
-
---- 
-
-!!! warning
-	**ZH1** (ROS alapok, publisher, subscriber. Python alapok. Robotikai alapfogalmak.) **október 11.**
-
-
-
-
-### Merev test mozgása
+### Rigid body motion
 
 ---
 
 ![](img/merev_test_helyzete.png){:style="width:200px" align=right}
 
-!!! abstract "Def. Merev test"
-    Merevnek tekinthető az a test, mely pontjainak távolsága mozgás során nem változik, vagyis bármely két pontjának távolsága időben állandó.
+!!! abstract "Def. Rigid body"
+    A rigid body is defined as a body on which the distance between two points remains constant in time regardless of the force applied on it.
 
 
-
-
-- Merev test alakja, térfogata szintén állandó.
-- Merev test térbeli helyzete megadható bármely 3 nem egy egyenesbe eső pontjának helyzetével.
+- Shape and the volume of the rigid bodies are also constant.
+- The **pose** of a rigid body can be given by the three coordinates of three of its points that do not lie on the same straight line.
 
 ![](img/merev_test_transzlacio.png){:style="width:200px" align=right}
 
-- A test **helyzetét** szemléletesebben megadhatjuk egy tetszőleges pontjának 3 koordinátájával (pozíció) és a test orientációjával.
+- The **pose** of a rigid body can be described in a more expressive way by the three coordinates of one of its points chosen arbitrarily **position** and the body's **orientation**.
 
 
 
-- Merev testek mozgásai két elemi mozgásfajtából tevődnek össze: **haladó mozgás (transzláció)** és **tengely körüli forgás (rotáció)**
+- The **motion of rigid bodies** is composed by two elemental motions: **translation** and **rotation**.
 
 
 
-- **Transzlációs mozgás** során a test minden pontja egymással párhuzamos, egybevágó pályát ír le, a test orientációja pedig nem változik.
+-  During **translation**, all points of the body move along straight, parallel lines.
 
 ![](img/merev_test_rotacio.png){:style="width:200px" align=right}
 
-- **Rotáció**  során a forgástengelyen lévő pontok pozíciója nem változik, a test többi pontja pedig a forgástengelyre merőleges síkokban körpályán mozog.
+- During **rotation**, the position of the points of the rotational axis are constant, and the other points of the body move along circles in planes perpendicular to the axis of rotation.
 
 
-- A **merev test szabad mozgása** is leírható mint egyidejűleg egy bizonyos **tengely körüli forgás és egy haladó mozgás**.
-
----
-
-### 3D transzformációk
+- The **free motion** of rigid bodies can always be expressed  as the superposition of a translational motion and a rotation around a single axis.
 
 ---
 
+### 3D transformations
 
-- **Pozíció:** 3 elemű offszet vektor 
-![](https://d2t1xqejof9utc.cloudfront.net/pictures/files/19711/original.png?1367580819){:style="width:250px" align=right}
-- **Orientáció:** 3 x 3 rotációs matrix
-    - további orientáció reprezentációk: Euler-szögek, RPY, angle axis, quaternion
+---
 
-- **Helyzet** (pose): 4 × 4 transzformációs mártrix
-- **Koordináta rendszer** (frame): null pont, 3 tengely, 3 bázis vektor, jobbkéz-szabály
-- **Homogén transzformációk:** rotáció és transzláció együtt
-    - pl. $\mathbf{R}$ rotáció és $\mathbf{v}$ transzláció esetén:
+
+- **Position:** 3D offset vector
+  ![](https://d2t1xqejof9utc.cloudfront.net/pictures/files/19711/original.png?1367580819){:style="width:250px" align=right}
+- **Orientation:** 3 x 3 rotation matrix
+    - further orientation representations: Euler-angles, RPY, angle axis, quaternion
+
+- **Pose**: 4 × 4 (homogenous) transformation matrix
+- **Frame**: origin, 3 axes, 3 base vectors, right hand rule
+- **Homogenous transformation:** rotation and translation in one transfromation
+    - e.g., for the rotation $\mathbf{R}$ and translation $\mathbf{v}$:
 
 $$
 \mathbf{T} = \left[\matrix{\mathbf{R} & \mathbf{v}\\\mathbf{0} & 1 }\right] = \left[\matrix{r_{1,1} & r_{1,2} & r_{1,3} & v_x\\r_{2,1} & r_{2,2} & r_{2,3} & v_y\\r_{3,1} & r_{3,2} & r_{3,3} & v_z\\\ 0 & 0 & 0 & 1 }\right]
 $$
 
-- **Homogén koordináták:** 
-    - **Vektor:** 0-val egészítjük ki, $\mathbf{a_H}=\left[\matrix{\mathbf{a} \\ 0}\right]=\left[\matrix{a_x \\ a_y \\ a_z \\ 0}\right]$
-    - **Pont:** 1-gyel egészítjük ki, $\mathbf{p_H}=\left[\matrix{\mathbf{p} \\ 1}\right]=\left[\matrix{p_x \\ p_y \\ p_z \\ 1}\right]$
-    - Transzformációk alkalmazása egyszerűbb:
+- **Homogenous coordinates:**
+    - **Vector:** extended with 0, $\mathbf{a_H}=\left[\matrix{\mathbf{a} \\ 0}\right]=\left[\matrix{a_x \\ a_y \\ a_z \\ 0}\right]$
+    - **Point:** extended by 1, $\mathbf{p_H}=\left[\matrix{\mathbf{p} \\ 1}\right]=\left[\matrix{p_x \\ p_y \\ p_z \\ 1}\right]$
+    - Applying transfomrations is much easier:
 
 $$
 \mathbf{q} = \mathbf{R}\mathbf{p} + \mathbf{v} \to \left[\matrix{\mathbf{q} \\ 1}\right] = \left[\matrix{\mathbf{R} & \mathbf{v}\\\mathbf{0} & 1 }\right]\left[\matrix{\mathbf{p} \\ 1}\right]
 $$
 
-- **Szabadsági fok** (DoF): egymástól független mennyiségek száma.
+- **Degrees of Freedom** (DoF): the number of independent parameters.
 
 ---
 
-### Robotikai alapok
+### Principles of robotics
 
 ---
 
 ![](img/segments.png){:style="width:400px" align=right}
 
-- Robotok felépítése: **szegmensek** (segment, link) és **csuklók** (joints)
-- **Munkatér** (task space, cartesian space):  
-    - Háromdimenziós tér, ahol a feladat, trajektóriák, akadályok, stb. definiálásra kerülnek.
-    - **TCP** (Tool Center Point): az end effektorhoz rögzített koordináta rendszer (frame)
-    - **Base/world frame**
-- **Csuklótér** (joint space):
-    -  A robot csuklóihoz rendelt mennyiségek, melyeket a robot alacsony szintű irányító rendszere értelmezni képes.
-    -  csukló koordináták, sebességek, gyorsulások, nyomatékok...
+- Robots are built of: **segments** (or links) és **joints**
+- **Task space** (or cartesian space):
+    - 3D space around us, where the task, endpoint trajectories, obstacles are defined.
+    - **TCP** (Tool Center Point): Frame fixed to the end effector of the robot.
+    - **Base frame**, **world frame**
+- **Joint space**:
+    -  Properties or values regarding the joints.
+    -  Low-level controller.
+    -  Joint angles, joint velocities, accelerations, torques....
 
 
 ---
@@ -159,6 +145,7 @@ s = p + 10
 s = p @ q    # dot product
 s = r.T
 ```
+
 If not installed:
 
 ```bash
@@ -194,17 +181,48 @@ pip3 install matplotlib
 
 ---
 
-## Gyakorlat
+## Practice
 
 ---
 
 
-### 1: Catkin workspace
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QksAVT0YMEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ---
 
+### 1: ROS1-ROS2 bridge install
 
-1. Telepítsük a catkin build tools csomagot:
+---
+
+1. Open the `~/.bashrc` file and comment out the lines responsible
+for source-coding ROS 1, ROS 2 and additional ROS workspaces.
+    ---
+
+2. Add the following line to the `~/.bashrc` file:
+
+    ```bash
+    export ROS_MASTER_URI=http://localhost:11311
+    ```
+
+    ---
+
+3. Install the `ros-foxy-ros1-bridge` package:
+
+
+    ```bash
+    sudo apt update
+    sudo apt install ros-foxy-ros1-bridge
+    ```
+
+---
+
+### 2: Catkin workspace
+
+---
+
+1. Install the catkin build tools package:
 
     ```bash
     sudo apt update
@@ -214,22 +232,22 @@ pip3 install matplotlib
     ---
 
 
-2. Hozzuk létre a workspace-t:
+2. Create the catkin workspace:
 
     ```bash
     mkdir -p ~/catkin_ws/src
     cd ~/catkin_ws
     catkin init
     ```
-    
----
-
-
-### 2. dVRK install
 
 ---
 
-1. Ubuntu 20.04-en az alábbi csomagokra lesz sükség:
+
+### 3: dVRK install
+
+---
+
+1. On Ubuntu 20.04 you will need the following packages:
 
 
     ```bash
@@ -237,8 +255,17 @@ pip3 install matplotlib
     ```
     
     ---
-    
-2. Töltsük le és telepítsük a dVRK-t (da Vinci Reserach Kit):
+
+2. Download the script that makes it easy to source ROS
+versions (already downloaded on VMs). Source ROS 1:
+
+    ```bash
+    cd 
+    source ros_setup.sh -v 1
+    ```
+
+
+3. Download and install the dVRK (da Vinci Reserach Kit):
 
     ```bash
     cd ~/catkin_ws                     # go in the workspace
@@ -250,128 +277,85 @@ pip3 install matplotlib
     cd ~/catkin_ws
     catkin build --summary             # ... and finally compile everything
     ```
-    
-    !!! danger
-        **Soha** ne használjuk a `catkin build` és a `catkin_make` parancsokat ugyanabban a workspace-ben!
 
-    ---
-    
-3. Indítsuk el a PSM1 (Patient Side Manipulator) RViz szimulációját:
-
-    ```bash
-    source ~/catkin_ws/devel/setup.bash
-    roslaunch dvrk_robot dvrk_arm_rviz.launch arm:=PSM1 config:=/home/$(whoami)/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/console/console-PSM1_KIN_SIMULATED.json
-    ```
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QksAVT0YMEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   !!! danger
+       **Never** use `catkin build` and `catkin_make` in the same workspace!
 
     ---
 
-### 3. ROS1-ROS2 bridge build és install
+4. Start the RViz simulation of PSM1 (Patient Side Manipulator). Do not forget to HOME on the dVRK console. Start the ROS1-ROS2 Bridge.
+Study the simulator operation from ROS 2 using the learned prancs
+(`ros2 topic list`, `ros2 topic echo` `ros2 run rqt_gui rqt_gui`, etc.).
 
----
-    ```bash
-    chmod +x ros_setup.sh
 
-    ```
-    
-    Adjuk hozzá az alábbi sort a `~/.bashrc` fájlhoz:
-    
-    ```bash
-    export ROS_MASTER_URI=http://localhost:11311
-    ```
-    
-    Szintén a `~/.bashrc` fájlban: kommenteljük ki a ROS2 source-olására használt sorokat.
-    
-    ```bash
-    # ROS 2
-    source /opt/ros/foxy/setup.bash
-    source ~/ros2_ws/install/setup.bash
-    source ~/doosan2_ws/install/setup.bash
-    ```
-
-<!---
-    ```bash
-    mkdir -p ~/ros1_bridge_ws/src
-    cd ~/ros1_bridge_ws/src
-    git clone -b foxy https://github.com/ros2/ros1_bridge.git
-    
-    source ~/ros_setup.sh -v 1
-    source ~/ros_setup.sh -v 2
-
-    colcon build --packages-select ros1_bridge --cmake-force-configure --cmake-args -DBUILD_TESTING=FALSE
-
-    ```
--->
-    
-    ```bash
-    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-    sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-    sudo apt update
-    sudo apt install ros-foxy-ros1-bridge
-    ```
-    
-    Launch
-    
-    ```bash
-    source ros_setup.sh -v 1
-    roslaunch dvrk_robot dvrk_arm_rviz.launch arm:=PSM1 config:=/home/$(whoami)/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/console/console-PSM1_KIN_SIMULATED.json
-
-    ```
-    
-    ```bash
-    source ros_setup.sh -v b
-    ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
-    ```
-    
     ```bash
     source ros_setup.sh -v 2
     ros2 topic list
     ros2 topic echo /PSM1/measured_cp
+    ros2 run rqt_gui rqt_gui
     ```
-    
-    
-    
 
-### 2. PSM subscriber implementálása
+
+    ```bash
+    source ros_setup.sh -v 1
+    roslaunch dvrk_robot dvrk_arm_rviz.launch arm:=PSM1 config:=/home/$(whoami)/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/console/console-PSM1_KIN_SIMULATED.json
+    ```
+   
+
+    ```bash
+    source ros_setup.sh -v b
+    ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
+    ```
+
+
+    ```bash
+    source ros_setup.sh -v 2
+    ros2 run rqt_gui rqt_gui
+    ```
 
 ---
 
-1. Nyissuk meg a workspace-t QtCreatorban, mint új ROS workspace.
 
-    ---
-    
-2. Hozzunk létre új python forrásfájlt `psm_grasp.py` névvel a  `~/catkin_ws/src/ros_course/scripts` mappában. Adjuk meg a fájl nevét a `CMakeLists.txt`-ben a megszokott módon.
 
+
+### 4: PSM subscriber
+
+---
+
+1. Create a new python source file named `psm_grasp.py` in `~/ros2_ws/src/ros2_course/ros2_course`.
+Specify the new entry point in `setup.py` in the usual way.
     ---
-    
-3. Vizsgáljuk a szimulátor működését a tanult prancsok (`rostopic list`, `rosrun rqt_graph rqt_graph`, stb.) használatával. A PSM a lenti topic-okban publikálja a TCP-t (Tool Center Point) és a csipesz pofái által bezárt szöget. Iratkozzunk fel ezekre a topic-okra, írassuk ki és tároljuk el a pillanatnyi állapotot egy-egy változóban.
+
+2. Subscribe to topics that publish the TCP (Tool Center Point)
+position of the PSM and the angle of the jaws of the tweezers.
 
     ```bash
     /PSM1/measured_cp
     /PSM1/jaw/measured_js
     ```
     
-    ---
+   ---
 
-4. Build-eljünk és futtassuk a node-ot:
+3. Build and run the node:
 
     ```bash
-    cd ~/catkin_ws
-    catkin build ros_course
-    rosrun ros_course psm_grasp.py 
+    source ros_setup.sh -v 2
+    cd ~/ros2_ws
+    colcon build --symlink-install
+    ros2 run ros2_course psm_grasp 
     ```
 
     ---
 
-### 3. PSM TCP mozgatása lineáris trajektória mentén
+### 5. Moving PSM TCP along a linear trajectory
 
 ---
 
-![](img/PSM_coordinates.png){:style="width:400px" align=right}
+![](img/PSM_coordinates.png){:style="width:350px" align=right}
 
-1. A PSM a lenti topicok-ban várja a kívánt TCP pozíciót és a csipesz pofái által bezárt szöget. Hozzunk létre publishereket a `psm_grasp.py` fájlban ezekhez a topicokhoz.
+
+1. The PSM expects the desired TCP position and the angle closed by the
+jaws of the clamp in the topics below. Create publishers in `psm_grasp.py` for these topics.
 
     ```bash
     /PSM1/servo_cp
@@ -380,51 +364,63 @@ pip3 install matplotlib
 
     ---
 
-2. Írjunk függvényt, amely lineáris trajektória mentén a kívánt pozícióba mozgatja a TCP-t. Küldjük az csipeszt a (0.0, 0.05, -0.12) pozícióba, az orientációt hagyjuk változatlanul. 0.01s legyen a mintavételi idő.
+2. Write a function that moves the TCP along a linear trajectory to the desired position.
+Send the pin to position (0.0, 0.05, -0.12),
+leave the orientation unchanged. The sampling time should be 0.01s. Using Matplotlib plot the planned trajectory
+x, y and z components of the projected trajectory as a function of time.
 
     ```python
     def move_tcp_to(self, target, v, dt):
     ```
 
-    ---
+   ![](img/lin.png){:style="width:700px" align=right}
     
-3. Írjunk függvényt, amellyel a csipeszt tudjuk nyitni-zárni, szintén lineáris trajektória használatával.
+   ---
 
+
+3. Write a function to open and close the gripper, also using a linear trajectory.
 
     ```python
     def move_jaw_to(self, target, omega, dt):
     ```
     
-    ![](img/lin.png){:style="width:700px" align=right}
-    
+
     ---
-    
-### 4. Dummy marker létrehozása
+
+### 6. Dummy marker
 
 ---
 
-1. Hozzunk létre új python forrásfájlt `dummy_marker.py` névvel a  `~/catkin_ws/src/ros_course/scripts` mappában. Adjuk meg a fájl nevét a `CMakeLists.txt`-ben a megszokott módon. Implementájunk python programot, amely markert publikál (-0.05, 0.08, -0.12) pozícióval `dummy_target_marker` nevű topic-ban. A `frame_id` addattag értéke legyen `PSM1_psm_base_link`. Másoljuk az alábbi kódot a `dummy_marker.py` fájlba:
-
-    ```python
-    import rospy
+1. Create a new python source file named `dummy_marker.py`. Specify the entry point in `setup.py` in the usual way.
+Implement a python program that publishes a marker with position (-0.05, 0.08, -0.14) in topic `dummy_target_marker`.
+The value of the `frame_id` add tag should be `PSM1_psm_base_link`. Copy the following code into the file `dummy_marker.py`:
+   
+2.  ```python
+    import rclpy
+    from rclpy.node import Node
     from visualization_msgs.msg import Marker
-
-    def marker(position):
-        rospy.init_node('dummy_target_publisher', anonymous=True)
-        pub = rospy.Publisher('dummy_target_marker', Marker, queue_size=10)
-        rate = rospy.Rate(10) # 10hz
-        i = 0
-        while not rospy.is_shutdown():
+    
+    class DummyMarker(Node):
+        def __init__(self, position):
+            super().__init__('minimal_publisher')
+            self.position = position
+            self.publisher_ = self.create_publisher(Marker, 'dummy_target_marker', 10)
+            timer_period = 0.1  # seconds
+            self.timer = self.create_timer(timer_period, self.timer_callback)
+            self.i = 0
+            i = 0
+    
+        def timer_callback(self):
             marker = Marker()
             marker.header.frame_id = 'PSM1_psm_base_link'
-            marker.header.stamp = rospy.Time()
+            marker.header.stamp = self.get_clock().now().to_msg()
             marker.ns = "dvrk_viz"
-            marker.id = i
+            marker.id = self.i
             marker.type = Marker.SPHERE
             marker.action = Marker.MODIFY
-            marker.pose.position.x = position[0]
-            marker.pose.position.y = position[1]
-            marker.pose.position.z = position[2]
+            marker.pose.position.x = self.position[0]
+            marker.pose.position.y = self.position[1]
+            marker.pose.position.z = self.position[2]
             marker.pose.orientation.x = 0.0
             marker.pose.orientation.y = 0.0
             marker.pose.orientation.z = 0.0
@@ -436,53 +432,59 @@ pip3 install matplotlib
             marker.color.r = 0.0
             marker.color.g = 1.0
             marker.color.b = 0.0;
-
-            #rospy.loginfo(marker)
-            pub.publish(marker)
-            i = i + 1
-            rate.sleep()
-
+    
+            self.publisher_.publish(marker)
+            self.i += 1
+    
+   
+    def main(args=None):
+        rclpy.init(args=args)
+        marker_publisher = DummyMarker([-0.05, 0.08, -0.12])
+        rclpy.spin(marker_publisher)
+    
+        # Destroy the node explicitly
+        # (optional - otherwise it will be done automatically
+        # when the garbage collector destroys the node object)
+        marker_publisher.destroy_node()
+        rclpy.shutdown()
+    
     if __name__ == '__main__':
-        try:
-            marker([-0.05, 0.08, -0.12])
-        except rospy.ROSInterruptException:
-            pass
+        main()
     ```
 
     ---
 
-2. Futtassuk a node-ot és jelenítsük meg a markert RViz-ben.
+2. Run the node and display the marker in RViz.
 
     ---
 
-### 5. Marker megfogása
+### 7. Grasping the marker
 
 ---
 
-1. Iratkozzunk fel a marker pozícióját küldő topic-ra a `psm_grasp.py`-ban.
+1. Subscribe to the topic sending the marker position in `psm_grasp.py`.
 
     ---
 
-2. Módosítsuk a `psm_grasp.py` programot úgy, hogy a csipesszel fogjuk meg a generált markert.
+2. Modify `psm_grasp.py` to use the tweezers to grasp the generated marker.
 
-    !!! note
-        A használt szimulátor hajlamos rá, hogy bizonyos értékek "beragadjanak", ezért a program elején érdemes az alábbi sorok használatával resetelni a kart:
-        ```python
-        #Reset the arm
-        psm.move_tcp_to([0.0, 0.0, -0.12], 0.01, 0.01)
-        psm.move_jaw_to(0.0, 0.1, 0.01)
-        ```
+   !!! note
+       The simulator used has a tendency for certain values to get "stuck", so it is a good idea to reset the lever at the beginning of the program using the following lines: 
+       ```python
+       #Reset the arm
+       psm.move_tcp_to([0.0, 0.0, -0.12], 0.01, 0.01)
+       psm.move_jaw_to(0.0, 0.1, 0.01)
+       ```
 
 
 ---
 
-## Hasznos linkek
+## USeful links
 
 - [Download and compile dVRK](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki/CatkinBuild)
 - [Marker examples](https://www.programcreek.com/python/example/88812/visualization_msgs.msg.Marker)
 - [Numpy vector magnitude](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
 - [Numpy linspace](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html)
-- [https://industrial-training-master.readthedocs.io/en/melodic/_source/session7/ROS1-ROS2-bridge.html](https://industrial-training-master.readthedocs.io/en/melodic/_source/session7/ROS1-ROS2-bridge.html)
 
 
 
