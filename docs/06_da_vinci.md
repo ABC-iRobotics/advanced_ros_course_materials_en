@@ -198,6 +198,7 @@ pip3 install matplotlib
 
 1. Open the `~/.bashrc` file and comment out the lines responsible
 for source-coding ROS 1, ROS 2 and additional ROS workspaces.
+    
     ---
 
 2. Add the following line to the `~/.bashrc` file:
@@ -278,8 +279,8 @@ versions (already downloaded on VMs). Source ROS 1:
     catkin build --summary             # ... and finally compile everything
     ```
 
-   !!! danger
-       **Never** use `catkin build` and `catkin_make` in the same workspace!
+    !!! danger
+        **Never** use `catkin build` and `catkin_make` in the same workspace!
 
     ---
 
