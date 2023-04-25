@@ -822,8 +822,8 @@
 <ol>
 <li>
 <p>Open the <code>~/.bashrc</code> file and comment out the lines responsible
-for source-coding ROS 1, ROS 2 and additional ROS workspaces.
-    ---</p>
+for source-coding ROS 1, ROS 2 and additional ROS workspaces.</p>
+<hr />
 </li>
 <li>
 <p>Add the following line to the <code>~/.bashrc</code> file:</p>
@@ -885,13 +885,12 @@ wstool<span class="w"> </span>up<span class="w">                          </span
 <span class="nb">cd</span><span class="w"> </span>~/catkin_ws
 catkin<span class="w"> </span>build<span class="w"> </span>--summary<span class="w">             </span><span class="c1"># ... and finally compile everything</span>
 </code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Never</strong> use <code>catkin build</code> and <code>catkin_make</code> in the same workspace!</p>
+</div>
+<hr />
 </li>
-</ol>
-<p>!!! danger
-       <strong>Never</strong> use <code>catkin build</code> and <code>catkin_make</code> in the same workspace!</p>
-<pre><code>---
-</code></pre>
-<ol>
 <li>
 <p>Start the RViz simulation of PSM1 (Patient Side Manipulator). Do not forget to HOME on the dVRK console. Start the ROS1-ROS2 Bridge.
 Study the simulator operation from ROS 2 using the learned prancs
