@@ -395,7 +395,7 @@ x, y and z components of the projected trajectory as a function of time.
 Implement a python program that publishes a marker with position (-0.05, 0.08, -0.14) in topic `dummy_target_marker`.
 The value of the `frame_id` add tag should be `PSM1_psm_base_link`. Copy the following code into the file `dummy_marker.py`:
    
-2.  ```python
+    ```python
     import rclpy
     from rclpy.node import Node
     from visualization_msgs.msg import Marker
@@ -435,8 +435,7 @@ The value of the `frame_id` add tag should be `PSM1_psm_base_link`. Copy the fol
     
             self.publisher_.publish(marker)
             self.i += 1
-    
-   
+
     def main(args=None):
         rclpy.init(args=args)
         marker_publisher = DummyMarker([-0.05, 0.08, -0.12])
