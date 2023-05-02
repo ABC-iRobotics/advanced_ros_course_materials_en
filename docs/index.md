@@ -1,3 +1,8 @@
+---
+title: Advanced programming of robots in ROS - Course information
+author: Tamas Nagy
+---
+
 ## Course Information
 
 ---

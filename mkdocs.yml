@@ -40,6 +40,7 @@ theme:
   features:
     - navigation.tabs
     - toc.integrate
+  custom_dir: overrides
 
 
 
