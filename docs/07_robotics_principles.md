@@ -269,7 +269,7 @@ Write a method that implements the inverse kinematics problem on the robot using
 The orientation is ignored. Move the TCP to the position `(0.55, 0.05, 0.45)`. Let us diagram the TCP
 trajectory of TCP using Matplotlib.
 
-1. Write a loop with a stop condition of the appropriate size of `delta_r` or `rospy.is_shutdown()`.
+1. Write a loop with a stop condition of the appropriate size of `delta_r` and `rclpy.ok()`.
 
     ---
 
