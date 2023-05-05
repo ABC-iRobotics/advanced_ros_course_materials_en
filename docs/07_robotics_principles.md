@@ -130,7 +130,7 @@ $$
 
 1. Calculate the difference between the desired and the current position: $\Delta\mathbf{r} = \mathbf{r}_{desired} - \mathbf{r}_0$
 2. Calculate the difference in rotations: $\Delta\mathbf{R} = \mathbf{R}_{desired}\mathbf{R}_{0}^{T}$, then convert to axis angle representation $(\mathbf{t},\phi)$
-3. Compute $\Delta\mathbf{ q}=\mathbf{J}^{-1}(\mathbf{q_0})\cdot \left[\matrix{k_1 \cdot \Delta\mathbf{r} \\ k_2 \cdot \phi \cdot \mathbf{t}}\right]$, where the inverse can be pseudo-inverse or transposed
+3. Compute $\Delta\mathbf{ q}=\mathbf{J}^{-1}(\mathbf{q_0})\cdot \left[\matrix{k_1 \cdot \Delta\mathbf{r} \\ k_2 \cdot \mathbf{\omega}}\right]$, where the inverse can be pseudo-inverse or transposed
 4. $\mathbf{q}_{better} = \mathbf{q}_{0} + \Delta\mathbf{q}$
 
 
@@ -279,11 +279,11 @@ trajectory of TCP using Matplotlib.
     ---
 
 
-3. Set `phi_dot_t` to `[0.0, 0.0, 0.0]` (ignore orientation).
+3. Set `omega` to `[0.0, 0.0, 0.0]` (ignore orientation).
 
     ---
 
-4. Concatenate `delta_r` and `phi_dot_t`.
+4. Concatenate `delta_r` and `omega`.
 
     ---
 
