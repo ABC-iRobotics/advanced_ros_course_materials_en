@@ -35,10 +35,10 @@ Borsa Détár
 |  9.   | April 25 | [Principles of robotics, da Vinci I.](06_da_vinci.md)                                         | -               |
 |  10.  | May 2    | [Principles of robotics, da Vinci II.](06_da_vinci.md)                                        | -               |
 |  11.  | May 9    | [Kinematics, Inverse kinematics I.](07_robotics_principles.md)                                | -               |
-|  12.  | May 16   | [Kinematics, Inverse kinematics II.](07_robotics_principles.md)                               | **Test**        |
+|  12.  | May 16   | [Kinematics, Inverse kinematics II.](07_robotics_principles.md)                               | -               |
 |  13.  | May 23   | Project lab II.                                                                               | -               |
-|  14.  | May 30   | Project presentations.                                                                        | **Test retake** |
-| 14+1. | June 6   | -                                                                                             | -               |
+|  14.  | May 30   | Project presentations.                                                                        |   **Test**      |
+| 14+1. | June 6   | -                                                                                             | **Test retake** |
 
 
 !!! warning
