@@ -15,6 +15,9 @@ nav:
       - 6. Principles of robotics, da Vinci: 06_da_vinci.md
       - 7. Kinematics, inverse kinematics: 07_robotics_principles.md
   - Projects: projects.md
+  - Archive:
+      - Gathering and processign sensory data (ROS1): arch_sensory_data.md
+      - Principles of robotics, da Vinci (ROS1-ROS2 bridge): arch_da_vinci.md
 
 
 theme:
