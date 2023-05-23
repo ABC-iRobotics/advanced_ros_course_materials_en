@@ -9,22 +9,24 @@
         <meta name="description" content="Materials for the course Advanced programming of robots in ROS at Óbuda University">
       
       
-        <meta name="author" content="Tamas D. Nagy">
+        <meta name="author" content="Tamás Nagy">
       
       
-      <link rel="icon" href="/advanced_ros_course_materials_en/assets/images/favicon.png">
+        <link rel="canonical" href="https://abc-irobotics.github.io/advanced_ros_course_materials_en/arch_sensory_data/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
-        <title>Advanced programming of robots in ROS</title>
+        <title>Collection and Processing of Sensor Data - Advanced programming of robots in ROS</title>
       
     
     
-      <link rel="stylesheet" href="/advanced_ros_course_materials_en/assets/stylesheets/main.2b4465f4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
       
         
-        <link rel="stylesheet" href="/advanced_ros_course_materials_en/assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -38,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL("/advanced_ros_course_materials_en/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gathering-and-processing-sensory-data" class="md-skip">
+          Kihagyás
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -77,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Élőfej">
-    <a href="/advanced_ros_course_materials_en/." title="Advanced programming of robots in ROS" class="md-header__button md-logo" aria-label="Advanced programming of robots in ROS" data-md-component="logo">
+    <a href=".." title="Advanced programming of robots in ROS" class="md-header__button md-logo" aria-label="Advanced programming of robots in ROS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -96,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Collection and Processing of Sensor Data
             
           </span>
         </div>
@@ -219,7 +226,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/advanced_ros_course_materials_en/." class="md-tabs__link">
+    <a href=".." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -234,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/advanced_ros_course_materials_en/01_system_setup/" class="md-tabs__link">
+      <a href="../01_system_setup/" class="md-tabs__link">
         Materials
       </a>
     </li>
@@ -247,7 +254,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/advanced_ros_course_materials_en/projects/" class="md-tabs__link">
+    <a href="../projects/" class="md-tabs__link">
       Projects
     </a>
   </li>
@@ -256,13 +263,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/advanced_ros_course_materials_en/arch_sensory_data/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Archive
       </a>
     </li>
@@ -292,7 +301,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigáció" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/advanced_ros_course_materials_en/." title="Advanced programming of robots in ROS" class="md-nav__button md-logo" aria-label="Advanced programming of robots in ROS" data-md-component="logo">
+    <a href=".." title="Advanced programming of robots in ROS" class="md-nav__button md-logo" aria-label="Advanced programming of robots in ROS" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -323,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Home
       </a>
     </li>
@@ -364,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/01_system_setup/" class="md-nav__link">
+      <a href="../01_system_setup/" class="md-nav__link">
         1. Introduction, System setup
       </a>
     </li>
@@ -378,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/02_linux_ros_principles/" class="md-nav__link">
+      <a href="../02_linux_ros_principles/" class="md-nav__link">
         2. Linux and ROS principles
       </a>
     </li>
@@ -392,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/03_python_principles/" class="md-nav__link">
+      <a href="../03_python_principles/" class="md-nav__link">
         3. Python principles,  ROS Publisher, ROS Subscriber
       </a>
     </li>
@@ -406,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/04_roslaunch/" class="md-nav__link">
+      <a href="../04_roslaunch/" class="md-nav__link">
         4. ROS 2 Launch, Param, Bag
       </a>
     </li>
@@ -420,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/05_git/" class="md-nav__link">
+      <a href="../05_git/" class="md-nav__link">
         5. Versioning, Git
       </a>
     </li>
@@ -434,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/06_da_vinci/" class="md-nav__link">
+      <a href="../06_da_vinci/" class="md-nav__link">
         6. Principles of robotics, da Vinci
       </a>
     </li>
@@ -448,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/07_robotics_principles/" class="md-nav__link">
+      <a href="../07_robotics_principles/" class="md-nav__link">
         7. Kinematics, inverse kinematics
       </a>
     </li>
@@ -470,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/projects/" class="md-nav__link">
+      <a href="../projects/" class="md-nav__link">
         Projects
       </a>
     </li>
@@ -483,12 +492,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -509,11 +520,107 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/arch_sensory_data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Gathering and processign sensory data (ROS1)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Gathering and processign sensory data (ROS1)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#practice" class="md-nav__link">
+    Practice
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-leo-rover" class="md-nav__link">
+    1: Leo Rover
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-coffee-on-mars-capturing-images" class="md-nav__link">
+    2: Coffee on Mars - Capturing Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-coffee-on-mars-offline-image-processing" class="md-nav__link">
+    3: Coffee on Mars - Offline Image Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-coffee-on-mars-online-perception-node" class="md-nav__link">
+    4: Coffee on Mars - Online Perception Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-coffee-on-mars-operation-logic-node" class="md-nav__link">
+    5: Coffee on Mars - Operation Logic Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-bonus" class="md-nav__link">
+    5+1: Bonus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful links
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -525,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_ros_course_materials_en/arch_da_vinci/" class="md-nav__link">
+      <a href="../arch_da_vinci/" class="md-nav__link">
         Principles of robotics, da Vinci (ROS1-ROS2 bridge)
       </a>
     </li>
@@ -548,10 +655,173 @@
             
           
           <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="arch_sensory_data.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
               
-  <h1>404 - Not found</h1>
+                
+<a href="https://github.com/ABC-iRobotics/advanced_ros_course_materials_en/edit/master/docs/arch_sensory_data.md" title="Oldal szerkesztése" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
 
+
+<h1 id="gathering-and-processing-sensory-data">Gathering and processing sensory data</h1>
+<hr />
+<h2 id="practice">Practice</h2>
+<hr />
+<h3 id="1-leo-rover">1: Leo Rover</h3>
+<hr />
+<ol>
+<li>
+<p>Install the Leo rover ROS packages:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install ros-noetic-leo*
+</code></pre></div>
+<hr />
+</li>
+<li>
+<p>Start the Gazebo simulator with the Mars landscape using the instructions from http://wiki.ros.org/leo_gazebo.</p>
+<hr />
+</li>
+<li>
+<p>Start the teleop node and move the robot.</p>
+</li>
+</ol>
+<hr />
+<h3 id="2-coffee-on-mars-capturing-images">2: Coffee on Mars - Capturing Images</h3>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Mars rover sent an image of an unusual object that looks like a coffee mug! The task is to turn the rover towards the mug and approach it for detailed examination.</p>
+</div>
+<p><img alt="" src="../img/coffee.png" style="width:600px" /></p>
+<hr />
+<ol>
+<li>
+<p>Start Gazebo:</p>
+<div class="highlight"><pre><span></span><code>    gazebo
+</code></pre></div>
+<hr />
+</li>
+<li>
+<p>In the <code>insert</code> panel, search for the <code>googleresearch/models/cole_hardware_mug_classic_blue</code> model and place it
+in the simulation. This is necessary to have the mug model in our file system later.</p>
+<hr />
+</li>
+<li>
+<p>Close Gazebo.</p>
+<hr />
+</li>
+<li>
+<p>Download the <code>leo_masryard_coffee.launch</code> and <code>marsyard_coffe.world</code> files,
+then copy them to the <code>catkin_ws/src/ros_course/launch</code> and <code>catkin_ws/src/ros_course/worlds</code>
+directories respectively.</p>
+<hr />
+</li>
+<li>
+<p>Modify the file paths <code>/home/tamas/.ignition/fuel/fuel...</code> in the <code>.world</code> files to match your own.</p>
+<hr />
+</li>
+<li>
+<p>Launch the simulator:</p>
+<div class="highlight"><pre><span></span><code>    roslaunch ros_course leo_marsyard_coffee.launch
+</code></pre></div>
+<hr />
+</li>
+<li>
+<p>Start the teleop and <code>rqt_image_view</code>:</p>
+<div class="highlight"><pre><span></span><code>rosrun leo_teleop key_teleop
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>    rosrun rqt_image_view rqt_image_view
+</code></pre></div>
+<hr />
+</li>
+<li>
+<p>Capture images showing the coffee mug being visible and not visible.</p>
+</li>
+</ol>
+<hr />
+<h3 id="3-coffee-on-mars-offline-image-processing">3: Coffee on Mars - Offline Image Processing</h3>
+<hr />
+<ol>
+<li>
+<p>Write a Python script to read and display the captured images.</p>
+<hr />
+</li>
+<li>
+<p>Perform color-based segmentation (or any other method) to segment the coffee mug.</p>
+<hr />
+</li>
+<li>
+<p>Determine the center of the mug in image coordinates.</p>
+<hr />
+</li>
+<li>
+<p>Filter out the noise caused by segmentation.</p>
+</li>
+</ol>
+<hr />
+<h3 id="4-coffee-on-mars-online-perception-node">4: Coffee on Mars - Online Perception Node</h3>
+<hr />
+<ol>
+<li>
+<p>Subscribe to the <code>/camera/image_raw</code> topic and display the received images using the <code>cv.imshow()</code> function.</p>
+<hr />
+</li>
+<li>
+<p>Integrate our working computer vision algorithm into a ROS node.</p>
+<hr />
+</li>
+<li>
+<p>Publish the detected mug's center coordinates in a new topic. You can use types like <code>Int32MultiArray</code>, <code>Point2D</code>, or define your own (the mug size will be needed later).</p>
+<hr />
+</li>
+<li>
+<p><em>Bonus: Publish the mask and masked image in separate Image topics.</em></p>
+</li>
+</ol>
+<hr />
+<h3 id="5-coffee-on-mars-operation-logic-node">5: Coffee on Mars - Operation Logic Node</h3>
+<hr />
+<ol>
+<li>
+<p>Write a new ROS node that receives messages from the perception node and is capable
+of controlling the rover's movement.</p>
+<hr />
+</li>
+<li>
+<p>Rotate the rover in place until the mug is in the center of the image.</p>
+<hr />
+</li>
+<li>
+<p>Approach the mug until its apparent size does not exceed 50% of the image size.</p>
+<hr />
+</li>
+<li>
+<p>Capture an image of the suspicious object.</p>
+</li>
+</ol>
+<hr />
+<h3 id="51-bonus">5+1: Bonus</h3>
+<hr />
+<ol>
+<li>
+<p>Explore the insertable models in Gazebo's <code>insert</code> panel and choose one that can be detected on the camera image using a different method (e.g., template matching).</p>
+<hr />
+</li>
+<li>
+<p>Modify the nodes to approach this object with the rover.</p>
+</li>
+</ol>
+<hr />
+<h2 id="useful-links">Useful links</h2>
+<ul>
+<li><a href="">http://wiki.ros.org/leo_gazebo</a></li>
+<li><a href="">http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython</a></li>
+<li><a href="">https://realpython.com/python-opencv-color-spaces/</a></li>
+<li><a href="">https://stackoverflow.com/questions/59164192/how-to-find-the-contour-of-a-blob-using-opencv-python</a></li>
+<li><a href="https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Turtlebot.html">Turtlebot</a></li>
+</ul>
+
+              
             </article>
           </div>
         </div>
@@ -559,6 +829,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Élőláb">
+      
+        
+        <a href="../projects/" class="md-footer__link md-footer__link--prev" aria-label="Előző: Projects" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Előző
+              </span>
+              Projects
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../arch_da_vinci/" class="md-footer__link md-footer__link--next" aria-label="Következő: Principles of robotics, da Vinci (ROS1-ROS2 bridge)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Következő
+              </span>
+              Principles of robotics, da Vinci (ROS1-ROS2 bridge)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -584,12 +889,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/advanced_ros_course_materials_en/", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "search.config.lang": "hu", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Keres\u00e9s", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.term.missing": "\u00dcres", "select.version.title": "Select version"}, "search": "/advanced_ros_course_materials_en/assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "search.config.lang": "hu", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Keres\u00e9s", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.term.missing": "\u00dcres", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="/advanced_ros_course_materials_en/assets/javascripts/bundle.960e086b.min.js"></script>
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
       
-        <script src="/advanced_ros_course_materials_en/javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
