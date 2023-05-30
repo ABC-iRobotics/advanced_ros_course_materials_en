@@ -278,6 +278,7 @@ Study the simulator operation using the learned prancs
 
 1. Create a new python source file named `psm_grasp.py` in `~/ros2_ws/src/ros2_course/ros2_course`.
 Specify the new entry point in `setup.py` in the usual way.
+
     ---
 
 2. Subscribe to topics that publish the TCP (Tool Center Point)
