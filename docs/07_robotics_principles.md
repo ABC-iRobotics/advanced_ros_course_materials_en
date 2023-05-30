@@ -78,7 +78,7 @@ $$
 #### Kinematics
 
 !!! abstract "Def. Kinematics"
-    Calculating the position of the TCP (or anything else) from the hinge coordinates.
+    Calculating the position of the TCP (or anything else) from the joint coordinates.
 
 
 - Kinematic model
