@@ -245,6 +245,12 @@ Study the simulator operation using the learned prancs
     ros2 run rviz2 rviz2 -d ~/ros2_ws/install/dvrk_model/share/dvrk_model/rviz/PSM1.rviz
     ```
 
+
+    ```bash
+    ros2 run rqt_gui rqt_gui
+    ```
+
+
     !!! tip "For URDF related errors"
         ```bash
         locale # check for UTF-8
@@ -260,10 +266,6 @@ Study the simulator operation using the learned prancs
     ---
 
 
-
-    ```bash
-    ros2 run rqt_gui rqt_gui
-    ```
 
 ---
 
