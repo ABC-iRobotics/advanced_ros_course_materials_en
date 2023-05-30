@@ -907,6 +907,8 @@ ros2 launch dvrk_model dvrk_state_publisher.launch.py arm:<span class="o">=</spa
 <div class="highlight"><pre><span></span><code><span class="c1"># RViz</span>
 ros2 run rviz2 rviz2 -d ~/ros2_ws/install/dvrk_model/share/dvrk_model/rviz/PSM1.rviz
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>ros2 run rqt_gui rqt_gui
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">For URDF related errors</p>
 <div class="highlight"><pre><span></span><code>locale <span class="c1"># check for UTF-8</span>
@@ -920,8 +922,6 @@ locale <span class="c1"># verify settings</span>
 </code></pre></div>
 </div>
 <hr />
-<div class="highlight"><pre><span></span><code>ros2 run rqt_gui rqt_gui
-</code></pre></div>
 </li>
 </ol>
 <hr />
