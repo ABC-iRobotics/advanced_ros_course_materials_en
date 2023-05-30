@@ -535,50 +535,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-ros1-ros2-bridge-install" class="md-nav__link">
-    1: ROS1-ROS2 bridge install
+  <a href="#1-dvrk-ros2-install" class="md-nav__link">
+    1: dVRK ROS2 install
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-catkin-workspace" class="md-nav__link">
-    2: Catkin workspace
+  <a href="#2-psm-subscriber" class="md-nav__link">
+    2: PSM subscriber
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-dvrk-install" class="md-nav__link">
-    3: dVRK install
+  <a href="#3-moving-psm-tcp-along-a-linear-trajectory" class="md-nav__link">
+    3. Moving PSM TCP along a linear trajectory
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-psm-subscriber" class="md-nav__link">
-    4: PSM subscriber
+  <a href="#4-dummy-marker" class="md-nav__link">
+    4. Dummy marker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-moving-psm-tcp-along-a-linear-trajectory" class="md-nav__link">
-    5. Moving PSM TCP along a linear trajectory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-dummy-marker" class="md-nav__link">
-    6. Dummy marker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-grasping-the-marker" class="md-nav__link">
-    7. Grasping the marker
+  <a href="#5-grasping-the-marker" class="md-nav__link">
+    5. Grasping the marker
   </a>
   
 </li>
@@ -590,7 +576,7 @@
       
         <li class="md-nav__item">
   <a href="#useful-links" class="md-nav__link">
-    USeful links
+    Useful links
   </a>
   
 </li>
@@ -888,102 +874,58 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QksAVT0YMEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
-<h3 id="1-ros1-ros2-bridge-install">1: ROS1-ROS2 bridge install</h3>
+<h3 id="1-dvrk-ros2-install">1: dVRK ROS2 install</h3>
 <hr />
-<ol>
-<li>
-<p>Open the <code>~/.bashrc</code> file and comment out the lines responsible
-for source-coding ROS 1, ROS 2 and additional ROS workspaces.</p>
-<hr />
-</li>
-<li>
-<p>Add the following line to the <code>~/.bashrc</code> file:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://localhost:11311
-</code></pre></div>
-<hr />
-</li>
-<li>
-<p>Install the <code>ros-foxy-ros1-bridge</code> package:</p>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install ros-foxy-ros1-bridge
-</code></pre></div>
-</li>
-</ol>
-<hr />
-<h3 id="2-catkin-workspace">2: Catkin workspace</h3>
-<hr />
-<ol>
-<li>
-<p>Install the catkin build tools package:</p>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt-get install python3-catkin-tools python3-osrf-pycommon
-</code></pre></div>
-<hr />
-</li>
-<li>
-<p>Create the catkin workspace:</p>
-<div class="highlight"><pre><span></span><code>mkdir -p ~/catkin_ws/src
-<span class="nb">cd</span> ~/catkin_ws
-catkin init
-</code></pre></div>
-</li>
-</ol>
-<hr />
-<h3 id="3-dvrk-install">3: dVRK install</h3>
-<hr />
+<p><img align="right" alt="" src="../img/PSM_coordinates.png" style="width:350px" /></p>
 <ol>
 <li>
 <p>On Ubuntu 20.04 you will need the following packages:</p>
-<div class="highlight"><pre><span></span><code>sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev python3-wstool python3-catkin-tools python3-osrf-pycommon ros-noetic-rviz
+<div class="highlight"><pre><span></span><code>sudo apt install python3-vcstool python3-colcon-common-extensions python3-pykdl libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev ros-foxy-joint-state-publisher* ros-foxy-xacro
 </code></pre></div>
 <hr />
 </li>
 <li>
-<p>Download the script that makes it easy to source ROS
-versions (already downloaded on VMs). Source ROS 1:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> 
-<span class="nb">source</span> ros_setup.sh -v <span class="m">1</span>
+<p>Clone the dVRK ROS2 packages with <code>vcs</code>, then build:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/ros2_ws/src                
+vcs import --input https://raw.githubusercontent.com/jhu-dvrk/dvrk_robot_ros2/main/dvrk.vcs --recursive
+<span class="nb">cd</span> ~/ros2_ws
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE<span class="o">=</span>Release   
+<span class="nb">source</span> ~/ros2_ws/install/setup.bash
 </code></pre></div>
+<hr />
 </li>
 <li>
-<p>Download and install the dVRK (da Vinci Reserach Kit):</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/catkin_ws                     <span class="c1"># go in the workspace</span>
-wstool init src                    <span class="c1"># we&#39;re going to use wstool to pull all the code from github</span>
-catkin config --cmake-args -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="c1"># all code should be compiled in release mode</span>
-<span class="nb">cd</span> src                             <span class="c1"># go in source directory to pull code</span>
-wstool merge https://raw.githubusercontent.com/jhu-dvrk/dvrk-ros/master/dvrk_ros.rosinstall <span class="c1"># or replace master by devel</span>
-wstool up                          <span class="c1"># now wstool knows which repositories to pull, let&#39;s get the code</span>
-<span class="nb">cd</span> ~/catkin_ws
-catkin build --summary             <span class="c1"># ... and finally compile everything</span>
+<p>Start the RViz simulation of PSM1 (Patient Side Manipulator). Do not forget to HOME on the dVRK console.
+Study the simulator operation using the learned prancs
+(<code>ros2 topic list</code>, <code>ros2 topic echo</code> <code>ros2 run rqt_gui rqt_gui</code>, etc.).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># dVRK main console</span>
+ros2 run dvrk_robot dvrk_console_json -j ~/ros2_ws/install/sawIntuitiveResearchKitAll/share/sawIntuitiveResearchKit/share/console/console-PSM1_KIN_SIMULATED.json
 </code></pre></div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p><strong>Never</strong> use <code>catkin build</code> and <code>catkin_make</code> in the same workspace!</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ROS 2 joint and robot state publishers</span>
+ros2 launch dvrk_model dvrk_state_publisher.launch.py arm:<span class="o">=</span>PSM1
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># RViz</span>
+ros2 run rviz2 rviz2 -d ~/ros2_ws/install/dvrk_model/share/dvrk_model/rviz/PSM1.rviz
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">For URDF related errors</p>
+<div class="highlight"><pre><span></span><code>locale <span class="c1"># check for UTF-8</span>
+
+sudo apt update <span class="o">&amp;&amp;</span> sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+
+locale <span class="c1"># verify settings</span>
+</code></pre></div>
 </div>
 <hr />
-</li>
-<li>
-<p>Start the RViz simulation of PSM1 (Patient Side Manipulator). Do not forget to HOME on the dVRK console. Start the ROS1-ROS2 Bridge.
-Study the simulator operation from ROS 2 using the learned prancs
-(<code>ros2 topic list</code>, <code>ros2 topic echo</code> <code>ros2 run rqt_gui rqt_gui</code>, etc.).</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> ros_setup.sh -v <span class="m">2</span>
-ros2 topic list
-ros2 topic <span class="nb">echo</span> /PSM1/measured_cp
-ros2 run rqt_gui rqt_gui
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> ros_setup.sh -v <span class="m">1</span>
-roslaunch dvrk_robot dvrk_arm_rviz.launch arm:<span class="o">=</span>PSM1 config:<span class="o">=</span>/home/<span class="k">$(</span>whoami<span class="k">)</span>/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/console/console-PSM1_KIN_SIMULATED.json
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> ros_setup.sh -v b
-ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span> ros_setup.sh -v <span class="m">2</span>
-ros2 run rqt_gui rqt_gui
+<div class="highlight"><pre><span></span><code>ros2 run rqt_gui rqt_gui
 </code></pre></div>
 </li>
 </ol>
 <hr />
-<h3 id="4-psm-subscriber">4: PSM subscriber</h3>
+<h3 id="2-psm-subscriber">2: PSM subscriber</h3>
 <hr />
 <ol>
 <li>
@@ -1011,7 +953,7 @@ ros2 run ros2_course psm_grasp
 <hr />
 </li>
 </ol>
-<h3 id="5-moving-psm-tcp-along-a-linear-trajectory">5. Moving PSM TCP along a linear trajectory</h3>
+<h3 id="3-moving-psm-tcp-along-a-linear-trajectory">3. Moving PSM TCP along a linear trajectory</h3>
 <hr />
 <p><img align="right" alt="" src="../img/PSM_coordinates.png" style="width:350px" /></p>
 <ol>
@@ -1042,7 +984,7 @@ x, y and z components of the projected trajectory as a function of time.</p>
 <hr />
 </li>
 </ol>
-<h3 id="6-dummy-marker">6. Dummy marker</h3>
+<h3 id="4-dummy-marker">4. Dummy marker</h3>
 <hr />
 <ol>
 <li>
@@ -1110,7 +1052,7 @@ The value of the <code>frame_id</code> add tag should be <code>PSM1_psm_base_lin
 <hr />
 </li>
 </ol>
-<h3 id="7-grasping-the-marker">7. Grasping the marker</h3>
+<h3 id="5-grasping-the-marker">5. Grasping the marker</h3>
 <hr />
 <ol>
 <li>
@@ -1128,9 +1070,9 @@ The value of the <code>frame_id</code> add tag should be <code>PSM1_psm_base_lin
 <span class="n">psm</span><span class="o">.</span><span class="n">move_jaw_to</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 </code></pre></div></p>
 <hr />
-<h2 id="useful-links">USeful links</h2>
+<h2 id="useful-links">Useful links</h2>
 <ul>
-<li><a href="https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki/CatkinBuild">Download and compile dVRK</a></li>
+<li><a href="https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki/BuildROS2">Build dVRK2 on ROS2</a></li>
 <li><a href="https://www.programcreek.com/python/example/88812/visualization_msgs.msg.Marker">Marker examples</a></li>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html">Numpy vector magnitude</a></li>
 <li><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">Numpy linspace</a></li>
