@@ -278,6 +278,7 @@ Study the simulator operation using the learned prancs
 
 1. Create a new python source file named `psm_grasp.py` in `~/ros2_ws/src/ros2_course/ros2_course`.
 Specify the new entry point in `setup.py` in the usual way.
+
     ---
 
 2. Subscribe to topics that publish the TCP (Tool Center Point)
@@ -293,7 +294,6 @@ position of the PSM and the angle of the jaws of the tweezers.
 3. Build and run the node:
 
     ```bash
-    source ros_setup.sh -v 2
     cd ~/ros2_ws
     colcon build --symlink-install
     ros2 run ros2_course psm_grasp 
