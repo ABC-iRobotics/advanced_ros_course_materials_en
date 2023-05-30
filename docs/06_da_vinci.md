@@ -191,126 +191,77 @@ pip3 install matplotlib
 
 
 ---
-
-### 1: ROS1-ROS2 bridge install
-
----
-
-1. Open the `~/.bashrc` file and comment out the lines responsible
-for source-coding ROS 1, ROS 2 and additional ROS workspaces.
-    
-    ---
-
-2. Add the following line to the `~/.bashrc` file:
-
-    ```bash
-    export ROS_MASTER_URI=http://localhost:11311
-    ```
-
-    ---
-
-3. Install the `ros-foxy-ros1-bridge` package:
-
-
-    ```bash
-    sudo apt update
-    sudo apt install ros-foxy-ros1-bridge
-    ```
+### 1: dVRK ROS2 install
 
 ---
 
-### 2: Catkin workspace
-
----
-
-1. Install the catkin build tools package:
-
-    ```bash
-    sudo apt update
-    sudo apt-get install python3-catkin-tools python3-osrf-pycommon
-    ```
-
-    ---
+![](img/PSM_coordinates.png){:style="width:350px" align=right}
 
 
-2. Create the catkin workspace:
-
-    ```bash
-    mkdir -p ~/catkin_ws/src
-    cd ~/catkin_ws
-    catkin init
-    ```
-
----
-
-
-### 3: dVRK install
-
----
 
 1. On Ubuntu 20.04 you will need the following packages:
 
 
+
     ```bash
-    sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev python3-wstool python3-catkin-tools python3-osrf-pycommon ros-noetic-rviz
+    sudo apt install python3-vcstool python3-colcon-common-extensions python3-pykdl libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev ros-foxy-joint-state-publisher* ros-foxy-xacro
+    ```
+
+
+    ---
+
+
+2. Clone the dVRK ROS2 packages with `vcs`, then build:
+
+
+    ```bash
+    cd ~/ros2_ws/src                
+    vcs import --input https://raw.githubusercontent.com/jhu-dvrk/dvrk_robot_ros2/main/dvrk.vcs --recursive
+    cd ~/ros2_ws
+    colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release   
+    source ~/ros2_ws/install/setup.bash
     ```
     
-    ---
-
-2. Download the script that makes it easy to source ROS
-versions (already downloaded on VMs). Source ROS 1:
-
-    ```bash
-    cd 
-    source ros_setup.sh -v 1
-    ```
-
-
-3. Download and install the dVRK (da Vinci Reserach Kit):
-
-    ```bash
-    cd ~/catkin_ws                     # go in the workspace
-    wstool init src                    # we're going to use wstool to pull all the code from github
-    catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release # all code should be compiled in release mode
-    cd src                             # go in source directory to pull code
-    wstool merge https://raw.githubusercontent.com/jhu-dvrk/dvrk-ros/master/dvrk_ros.rosinstall # or replace master by devel
-    wstool up                          # now wstool knows which repositories to pull, let's get the code
-    cd ~/catkin_ws
-    catkin build --summary             # ... and finally compile everything
-    ```
-
-    !!! danger
-        **Never** use `catkin build` and `catkin_make` in the same workspace!
 
     ---
 
-4. Start the RViz simulation of PSM1 (Patient Side Manipulator). Do not forget to HOME on the dVRK console. Start the ROS1-ROS2 Bridge.
-Study the simulator operation from ROS 2 using the learned prancs
+3. Start the RViz simulation of PSM1 (Patient Side Manipulator). Do not forget to HOME on the dVRK console.
+Study the simulator operation using the learned prancs
 (`ros2 topic list`, `ros2 topic echo` `ros2 run rqt_gui rqt_gui`, etc.).
 
 
     ```bash
-    source ros_setup.sh -v 2
-    ros2 topic list
-    ros2 topic echo /PSM1/measured_cp
-    ros2 run rqt_gui rqt_gui
+    # dVRK main console
+    ros2 run dvrk_robot dvrk_console_json -j ~/ros2_ws/install/sawIntuitiveResearchKitAll/share/sawIntuitiveResearchKit/share/console/console-PSM1_KIN_SIMULATED.json
     ```
+
+    ```bash
+    # ROS 2 joint and robot state publishers
+    ros2 launch dvrk_model dvrk_state_publisher.launch.py arm:=PSM1
+    ```
+
+    ```bash
+    # RViz
+    ros2 run rviz2 rviz2 -d ~/ros2_ws/install/dvrk_model/share/dvrk_model/rviz/PSM1.rviz
+    ```
+
+    !!! tip "For URDF related errors"
+        ```bash
+        locale # check for UTF-8
+
+        sudo apt update && sudo apt install locales
+        sudo locale-gen en_US en_US.UTF-8
+        sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+        export LANG=en_US.UTF-8
+
+        locale # verify settings
+        ```
+
+    ---
+
 
 
     ```bash
-    source ros_setup.sh -v 1
-    roslaunch dvrk_robot dvrk_arm_rviz.launch arm:=PSM1 config:=/home/$(whoami)/catkin_ws/src/cisst-saw/sawIntuitiveResearchKit/share/console/console-PSM1_KIN_SIMULATED.json
-    ```
-   
-
-    ```bash
-    source ros_setup.sh -v b
-    ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
-    ```
-
-
-    ```bash
-    source ros_setup.sh -v 2
     ros2 run rqt_gui rqt_gui
     ```
 
@@ -319,7 +270,7 @@ Study the simulator operation from ROS 2 using the learned prancs
 
 
 
-### 4: PSM subscriber
+### 2: PSM subscriber
 
 ---
 
@@ -348,7 +299,7 @@ position of the PSM and the angle of the jaws of the tweezers.
 
     ---
 
-### 5. Moving PSM TCP along a linear trajectory
+### 3. Moving PSM TCP along a linear trajectory
 
 ---
 
@@ -388,7 +339,7 @@ x, y and z components of the projected trajectory as a function of time.
 
     ---
 
-### 6. Dummy marker
+### 4. Dummy marker
 
 ---
 
@@ -458,7 +409,7 @@ The value of the `frame_id` add tag should be `PSM1_psm_base_link`. Copy the fol
 
     ---
 
-### 7. Grasping the marker
+### 5. Grasping the marker
 
 ---
 
@@ -479,9 +430,9 @@ The value of the `frame_id` add tag should be `PSM1_psm_base_link`. Copy the fol
 
 ---
 
-## USeful links
+## Useful links
 
-- [Download and compile dVRK](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki/CatkinBuild)
+- [Build dVRK2 on ROS2](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki/BuildROS2)
 - [Marker examples](https://www.programcreek.com/python/example/88812/visualization_msgs.msg.Marker)
 - [Numpy vector magnitude](https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html)
 - [Numpy linspace](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html)
