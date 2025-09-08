@@ -2,57 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/01_system_setup/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/02_linux_ros_principles/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/03_python_principles/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/04_roslaunch/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/05_git/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/06_da_vinci/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/07_robotics_principles/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/arch_da_vinci/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/arch_sensory_data/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
     <url>
          <loc>https://abc-irobotics.github.io/advanced_ros_course_materials_en/projects/</loc>
-         <lastmod>2023-05-30</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-09-08</lastmod>
     </url>
 </urlset>
