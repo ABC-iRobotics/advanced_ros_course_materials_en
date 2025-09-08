@@ -1,4 +1,47 @@
 ---
+title: Advanced Robot Programming in ROS — Course Information (EN)
+author: Tamás Levendovics
+---
+
+# 🚧 Page under construction
+
+!!! warning "Work in progress"
+This English page is being prepared.  
+For the complete and most up-to-date information, please see the **Hungarian** page.
+
+[➡️ Go to the Hungarian page](https://abc-irobotics.github.io/advanced_ros_course_materials_hu/)
+
+---
+
+## Quick facts
+
+| Group | Time                | Room   |
+|:----:|---------------------|--------|
+| **1** | **Friday 12:35–16:05** | BA.1.10 |
+
+---
+
+## Contacts
+
+**Course coordinator**  
+Prof. Dr. Péter Galambos  
+[peter.galambos@irob.uni-obuda.hu](mailto:peter.galambos@irob.uni-obuda.hu)
+
+**Instructor**  
+Dr. Tamás Levendovics  
+[tamas.levendovics@irob.uni-obuda.hu](mailto:tamas.levendovics@irob.uni-obuda.hu)
+
+---
+
+## Notes
+
+- The detailed syllabus, requirements and materials are currently available on the Hungarian page.
+
+
+
+
+<!--
+---
 title: Advanced programming of robots in ROS - Course information
 author: Tamas Nagy
 ---
@@ -105,3 +148,4 @@ To pass the course, Tests and the Project must be passed (grade 2). One of the T
 
 ---
 
+-->
